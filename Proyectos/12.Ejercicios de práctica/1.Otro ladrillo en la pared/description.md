@@ -1,4 +1,4 @@
-# Otro ladrillo en la pared
+# <a href="https://www.youtube.com/watch?v=c05aOG5p0P4" target="_blank">Otro ladrillo en la pared</a>
 
 Escribir un programa que construya una pared de ladrillos de ocho ladrillos de alto 
 por cuatro ladrillos de ancho. Una pared de ladrillos está compuesta por hileras de 

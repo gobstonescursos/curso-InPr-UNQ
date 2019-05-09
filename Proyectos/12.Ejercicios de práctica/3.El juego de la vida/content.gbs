@@ -1,0 +1,34 @@
+interactive program {
+  K_UP     -> { PrepararElPróximoTick()  }
+  K_RIGHT  -> { CompletarElPróximoTick() }
+  K_RETURN -> { SimularUnTick()          }
+}
+
+function esCélulaViva() {
+  return (...)
+}
+
+function nroDeVecinasVivas() {
+  return (...)
+}
+
+procedure Simular_Ticks(cantidad) {
+  ...
+}
+
+procedure SimularUnTick() {
+  ...
+}
+
+procedure PrepararCélulaActual() {
+  ...
+}
+
+procedure PrepararElPróximoTick() {
+  ...
+}
+
+procedure CompletarElPróximoTick() {
+  ...
+}
+

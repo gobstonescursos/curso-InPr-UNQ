@@ -2177,7 +2177,7 @@ function aux_listaDeNúmerosNoOcultosDesdeLaCeldaActual() {
       númerosLeídos   := númerosLeídos ++ [ aux_númeroParaElCódigo(aux_leerDato()) ]
       AuxAvanzarRecorridoGral(Este, Sur)
    }
-   if (aux_hayNúmeroOculto()) { númerosLeídos   := númerosLeídos ++ [ aux_númeroParaElCódigo(aux_leerDato()) ] }
+   if (aux_hayNúmeroNoOculto()) { númerosLeídos   := númerosLeídos ++ [ aux_númeroParaElCódigo(aux_leerDato()) ] }
 
    return(númerosLeídos)
 }

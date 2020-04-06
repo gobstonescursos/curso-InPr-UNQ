@@ -9,7 +9,7 @@ procedure RepartirCaramelos() {
         DarUnCaramelo() 
     }
     IrAlEscritorio()
-    ComerCaramelos()
+    ComerLosCaramelos()
 }
 
 procedure RecolectarEnvoltorios() {    

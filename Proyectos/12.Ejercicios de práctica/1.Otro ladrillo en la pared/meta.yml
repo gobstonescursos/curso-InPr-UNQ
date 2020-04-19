@@ -7,6 +7,7 @@ attire:
 blocks:
   defaultToolbox: |
     <category name="Comandos básicos">
+        <block type="Mover"></block>
         <block type="RepeticionSimple"></block>
     </category>
     <category name="Expresiones básicas">

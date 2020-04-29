@@ -4,7 +4,7 @@
 
 procedure CombatirGikachuVsGarmander() {
   if (nroBolitas(Rojo) == nroBolitas(Negro)) {
-    Empatan()
+    ProcesarEmpate()
   }
   else {
     if (nroBolitas(Rojo) < nroBolitas(Negro)) 
@@ -21,7 +21,7 @@ procedure SacarGarmander() {
   SacarTodas(Rojo)
 }
 
-procedure Empatan() {
+procedure ProcesarEmpate() {
   SacarGarmander()
   SacarGikachu()
 }

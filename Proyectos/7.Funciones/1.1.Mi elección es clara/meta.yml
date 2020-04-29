@@ -105,7 +105,7 @@ blocks:
                             , "OperadorDeNegacion"
                             , "siguiente", "previo", "opuesto"
             , "DEFINICIONES", "procedures_defnoreturn"
-                            , "procedures_defreturnsimple", "DefinicionDeFuncionSimpleDeclarativa"
+                            , "DefinicionDeFuncionSimpleDeclarativa"
             ]
 board:
   active: 1

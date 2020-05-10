@@ -1,26 +1,26 @@
 ﻿program { SimularUnRadar() }
 
 procedure SimularUnRadar() {
-  if (hayEnCuadrante(avión(), Norte, Oeste)) { Poner(Azul)  }
-  if (hayEnCuadrante(avión(), Norte, Este))  { Poner(Negro) }
-  if (hayEnCuadrante(avión(), Sur,   Este))  { Poner(Verde) }
-  if (hayEnCuadrante(avión(), Sur,   Oeste)) { Poner(Rojo)  }
+  if (hay_EnCuadrante__(avión(), Norte, Oeste)) { Poner(Azul)  }
+  if (hay_EnCuadrante__(avión(), Norte, Este))  { Poner(Negro) }
+  if (hay_EnCuadrante__(avión(), Sur,   Este))  { Poner(Verde) }
+  if (hay_EnCuadrante__(avión(), Sur,   Oeste)) { Poner(Rojo)  }
 }
 
 function avión() { return(Rojo) }
 
-function hayEnCuadrante(objeto, dirección1, dirección2) {
-  BuscarEnCuadrante(objeto, dirección1, dirección2)
+function hay_EnCuadrante__(objeto, dirección1, dirección2) {
+  Buscar_EnCuadrante__(objeto, dirección1, dirección2)
   return (hayBolitas(objeto))
 }
 
-procedure BuscarEnCuadrante(objetoABuscar, direcciónPrincipal, direcciónSecundaria) {
-  anchoDelCuadrante := distanciaAlBorde(direcciónPrincipal)
-  while (not (hayBolitas(objetoABuscar)) && not (esLaÚltimaCelda(direcciónPrincipal, direcciónSecundaria))) 
-    { IrALaSiguienteCelda(anchoDelCuadrante, direcciónPrincipal, direcciónSecundaria) }
+procedure Buscar_EnCuadrante__(objetoABuscar, direcciónPrincipal, direcciónSecundaria) {
+  anchoDelCuadrante := distanciaAlBorde_(direcciónPrincipal)
+  while (not (hayBolitas(objetoABuscar)) && not (esLaÚltimaCelda__(direcciónPrincipal, direcciónSecundaria))) 
+    { IrALaSiguienteCeldaEnCuadrante__DeAncho_(direcciónPrincipal, direcciónSecundaria,anchoDelCuadrante) }
 }
 
-procedure IrALaSiguienteCelda(ancho, direcciónPrincipal, direcciónSecundaria) {
+procedure IrALaSiguienteCeldaEnCuadrante__DeAncho_(direcciónPrincipal, direcciónSecundaria, ancho) {
   if (puedeMover(direcciónPrincipal)) 
         { Mover(direcciónPrincipal) }
    else {
@@ -29,11 +29,11 @@ procedure IrALaSiguienteCelda(ancho, direcciónPrincipal, direcciónSecundaria) 
         }
 }
 
-function esLaÚltimaCelda(dirección1, dirección2) {
+function esLaÚltimaCelda__(dirección1, dirección2) {
   return (not (puedeMover(dirección1)) && not (puedeMover(dirección2)))
 }
 
-function distanciaAlBorde(direcciónAMedir) {
+function distanciaAlBorde_(direcciónAMedir) {
   cantidadDePasosAvanzados := 0
   while (puedeMover(direcciónAMedir)) {
     Mover(direcciónAMedir)

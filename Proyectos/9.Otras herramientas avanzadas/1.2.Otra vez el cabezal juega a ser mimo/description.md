@@ -24,8 +24,8 @@ Lo que necesitás es una variable, como en la actividad anterior.
 > **Déjà vu**
 >
 > ¿No te resulta familiar esta actividad?
-> Quizás hayas hecho algo parecido cuando tuviste que imitar el largo del pasto de tu vecino…
-> Pero cuando te propusimos esa actividad, no tenías variables, y por eso era más difícil.
+> Quizás hayas hecho algo parecido cuando tuviste que imitar el largo del pasto de tu vecino, o al pasar letras a mayúsculas…
+> Pero cuando se propusieron esas actividades (si las viste), no tenías variables, y por eso era más difícil.
 
 [Enunciado en PDF][PDF]
 

@@ -2,25 +2,25 @@
 }
 
 procedure SimularUnRadar() {
-  if (hayEnCuadrante(avión(), Norte, Oeste)) { ... }
-  if (hayEnCuadrante(avión(), ..., ...)) { Poner(Negro) }
+  if (hay_EnCuadrante__(avión(), Norte, Oeste)) { ... }
+  if (hay_EnCuadrante__(avión(), ..., ...)) { Poner(Negro) }
   if (...) { Poner(Verde) }
   if (...) { ... }
 }
 
 function avión() { return(Rojo) }
 
-function hayEnCuadrante(objeto, dirección1, dirección2) {
+function hay_EnCuadrante__(objeto, dirección1, dirección2) {
   ...
   return (...)
 }
 
-procedure BuscarEnCuadrante(objetoABuscar, direcciónPrincipal, direcciónSecundaria) {
+procedure Buscar_EnCuadrante__(objetoABuscar, direcciónPrincipal, direcciónSecundaria) {
   anchoDelCuadrante := ...
   ...
 }
 
-procedure IrALaSiguienteCelda(ancho, direcciónPrincipalAPasar, direcciónSecundariaAPasar) {
+procedure IrALaSiguienteCeldaEnCuadrante__DeAncho_(direcciónPrincipalAPasar, direcciónSecundariaAPasar,ancho) {
   if (...) {
     ...
   } 
@@ -30,9 +30,9 @@ procedure IrALaSiguienteCelda(ancho, direcciónPrincipalAPasar, direcciónSecund
   }
 }
 
-function esLaÚltimaCelda(dirección1, dirección2) { return (...) }
+function esLaÚltimaCelda__(dirección1, dirección2) { return (...) }
 
-function distanciaAlBorde(direcciónAMedir) {
+function distanciaAlBorde_(direcciónAMedir) {
   ...
   return (...)
 }

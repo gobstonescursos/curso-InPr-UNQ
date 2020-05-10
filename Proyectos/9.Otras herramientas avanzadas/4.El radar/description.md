@@ -25,13 +25,13 @@ También te mostramos un tablero final con vestimenta:
 
 Para llevar adelante la tarea, te proponemos que construyas:
 
-  * Un procedimiento `BuscarEnCuadrante`, que tome un color `colorABuscar` y 
+  * Un procedimiento `Buscar_EnCuadrante__`, que tome un color `colorABuscar` y 
     dos direcciones, `direcciónPrincipal` y `direcciónSecundaria`, y busque una 
     celda conteniendo bolitas del color dado en el cuadrante indicado por las direcciones. 
     Si existe una celda como la buscada, el procedimiento deja el cabezal sobre ella; 
     si no existe, lo deja en la última celda del cuadrante. 
-  * Una función `hayEnCuadrante`, que tome un color y dos direcciones, y utilice 
-    `BuscarEnCuadrante` para determinar si hay o no bolitas del color indicado en ese cuadrante. 
+  * Una función `hay_EnCuadrante__`, que tome un color y dos direcciones, y utilice 
+    `Buscar_EnCuadrante__` para determinar si hay o no bolitas del color indicado en ese cuadrante. 
     Fijate que esta va a ser una función con procesamiento, por lo que la búsqueda es imaginaria, 
     tal cual lo que hace el radar. 
     Después de usar el procedimiento, ¿qué condición te va a decir si encontró lo que buscaba o no? 

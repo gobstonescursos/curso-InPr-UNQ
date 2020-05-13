@@ -27,7 +27,7 @@ blocks:
     <category name="Mis funciones" custom="FUNCTION_CALLS">        </category>
     <category name="Definiciones">
         <block type="procedures_defnoreturnnoparams"></block>
-        <block type="procedures_defreturnsimple"></block>
+        <block type="DefinicionDeFuncionSimpleDeclarativa"></block>
         </category>
 board:
   active: 1

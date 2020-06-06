@@ -117,7 +117,6 @@ blocks:
                             , "DefinicionDeFuncionSimpleConParametrosDeclarativa"
                             , "DefinicionDeFuncionDeclarativa"
             ]
-            ]
 board:
   active: 1
   initial_board_source: random

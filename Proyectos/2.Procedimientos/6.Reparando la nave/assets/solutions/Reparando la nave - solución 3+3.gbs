@@ -10,7 +10,7 @@ procedure ConseguirTodoElHierro() {
   repeat (3) { ConseguirUnHierro() } 
 }
 
-procedure ConseguirTodoElCarbón()() { 
+procedure ConseguirTodoElCarbón() { 
   repeat (3) { ConseguirUnCarbón() } 
 }
 

@@ -43,11 +43,11 @@ procedure PonerLadrillosEnLaHileraInferior() {
 }
 
 procedure PonerLadrillosEnLaHileraSuperior() {
-    PonerMedioLadrilloEnElBordeIzquierdo()
+    PonerMedioLadrilloEnElBordeOeste()
     repeat (3) {
         Mover(Este)
         PonerLadrillo()
     }
-    PonerMedioLadrilloEnElBordeDerecho()
+    PonerMedioLadrilloEnElBordeEste()
     IrAlBorde(Oeste)
 }

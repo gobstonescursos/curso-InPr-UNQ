@@ -27,14 +27,14 @@ procedure PonerLadrillo()
         que ya contenga un ladrillo entero y medio ladrillo del lado izquierdo
   */
   
-procedure PonerMedioLadrilloEnElBordeIzquierdo()
+procedure PonerMedioLadrilloEnElBordeOeste()
   /* PROPÓSITO: Poner medio ladrillo en la celda actual
      PRECONDICIONES: 
       * la celda actual debe estar en el borde Oeste
       * debe haber un ladrillo entero en la parte inferior de la celda actual, y cemento sobre él
   */
   
-procedure PonerMedioLadrilloEnElBordeDerecho()
+procedure PonerMedioLadrilloEnElBordeEste()
   /* PROPÓSITO: Poner medio ladrillo en la celda actual
      PRECONDICIONES: 
       * la celda actual debe estar en el borde Este

@@ -42,7 +42,7 @@ procedure PonerLadrillo() {
       * debe haber un ladrillo entero en la parte inferior de la
         celda actual, y cemento sobre él
   @*/
-procedure PonerMedioLadrilloEnElBordeIzquierdo() {
+procedure PonerMedioLadrilloEnElBordeOeste() {
     if (not puedeMover(Oeste)) 
          { AuxPonerMedioLadrilloAl(Oeste) }
     else { BOOM("Solo puedo poner medio ladrillo en el borde") }
@@ -56,7 +56,7 @@ procedure PonerMedioLadrilloEnElBordeIzquierdo() {
         celda actual, cemento sobre él, y medio ladrillo del lado
         izquierdo de la celda
   @*/
-procedure PonerMedioLadrilloEnElBordeDerecho() {
+procedure PonerMedioLadrilloEnElBordeEste() {
     if (not puedeMover(Este)) 
          { AuxPonerMedioLadrilloAl(Este) }
     else { BOOM("Solo puedo poner medio ladrillo en el borde") }

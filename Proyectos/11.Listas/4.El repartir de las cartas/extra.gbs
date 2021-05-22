@@ -151,9 +151,9 @@ function aux_potencia(x,n) {
 function  aux_códigoParaLaMarca() { return(100) }
 function  aux_hayMarca() { return (nroBolitas(aux_colorParaLaMarca())>=aux_códigoParaLaMarca()) }
 procedure AuxMarcar()    { AuxPoner__Veces(aux_colorParaLaMarca(),aux_códigoParaLaMarca())     }
-procedure AuxDesmarcar() { 
+procedure AuxDesmarcar() {
   // PRECONDICIÓN: hay una marca en el lugar (o sea, aux_hayMarca() es verdadero)
-  AuxSacar__Veces(aux_colorParaLaMarca(),aux_códigoParaLaMarca()) 
+  AuxSacar__Veces(aux_colorParaLaMarca(),aux_códigoParaLaMarca())
 }
 
 procedure AuxVolverALaMarca() {
@@ -170,10 +170,10 @@ procedure AuxIniciarRecorrido()    { AuxIniciarRecorridoGral          (Este, Nor
 procedure AuxAvanzarRecorrido()    { AuxAvanzarRecorridoGral          (Este, Norte)  }
 function  aux_terminóElRecorrido() { return(aux_terminóElRecorridoGral(Este, Norte)) }
 
-procedure AuxIniciarRecorridoGral(dirPpal, dirSecundaria) 
+procedure AuxIniciarRecorridoGral(dirPpal, dirSecundaria)
   { IrAlBorde(opuesto(dirPpal)) IrAlBorde(opuesto(dirSecundaria)) }
 
-function aux_terminóElRecorridoGral(dirPpal, dirSecundaria) 
+function aux_terminóElRecorridoGral(dirPpal, dirSecundaria)
   { return (not puedeMover(dirPpal) && not puedeMover(dirSecundaria)) }
 
 procedure AuxAvanzarRecorridoGral(dirPpal, dirSecundaria) {
@@ -201,7 +201,7 @@ procedure AuxAvanzarRecorridoGral(dirPpal, dirSecundaria) {
 //-------------------------------
 // PARA CORRECCIÓN DE GOBSTONES, HASTA QUE LO ARREGLEMOS
 //function último(xs)   { return (ultimo(xs))   }
-//function esVacía(xs)    { return(aux_esVacía()) } 
+//function esVacía(xs)    { return(aux_esVacía()) }
 //-------------------------------
 
 //function calcularLongitud_(lista) { return(aux_calcularLongitud(lista)) }
@@ -302,16 +302,16 @@ function aux_calcularLongitud(lista) {
 //---------------------------------------------------------------------------------------------------/
 /*--------------------------- Auxiliares para sensar números en el tablero --------------------------/
 /---------------------------------------------------------------------------------------------------*/
-function aux_hayNúmeroPorDígitos() { return(aux_hayDígito()) } 
+function aux_hayNúmeroPorDígitos() { return(aux_hayDígito()) }
 function aux_hayDígito() {
-  return (aux_hayTipoDígito() 
-       && aux_hayDatoDígito()) 
+  return (aux_hayTipoDígito()
+       && aux_hayDatoDígito())
 }
 
 function aux_hayTipoDígito() { return (aux_esTipoDígito(aux_leerTipo())) }
 function aux_hayDatoDígito() { return (aux_esDatoDígito(aux_leerDato())) }
 
-function aux_elDígitoEstáOculto() { 
+function aux_elDígitoEstáOculto() {
   // PRECONDICIÓN: hay un dígito
   return (aux_hayAtributoReverso())
 }
@@ -321,14 +321,14 @@ function aux_elNúmeroPorDígitosEstáOculto() {
   return (aux_elDígitoEstáOculto())
 }
 
-function aux_elDígitoEstáOcultoConBoom() { 
+function aux_elDígitoEstáOcultoConBoom() {
   if (not aux_hayDígito()) { BOOM("No hay un dígito que pueda estar oculto") }
-  return(aux_elDígitoEstáOculto())    
+  return(aux_elDígitoEstáOculto())
 }
 
 function aux_elNúmeroPorDígitosEstáOcultoConBoom() {
   if (not aux_hayNúmeroPorDígitos()) { BOOM("No hay un número por dígitos que pueda estar oculto") }
-  return(aux_elNúmeroPorDígitosEstáOculto())    
+  return(aux_elNúmeroPorDígitosEstáOculto())
 }
 
 //---------------------------------------------------------------------------------------------------/
@@ -355,13 +355,13 @@ function aux_númeroPorDígitosDesdeLaCeldaActual() {
       dígitosLeídos := dígitosLeídos ++ [ aux_dígitoActual() ]
       AuxAvanzarRecorridoGral(Este, Sur)
    }
-   if (aux_hayDígito()) { 
+   if (aux_hayDígito()) {
       dígitosLeídos := dígitosLeídos ++ [ aux_dígitoActual() ]
   }
   return(aux_númeroPorDígitosParaElCódigo(dígitosLeídos))
-}         
+}
 
-procedure AuxPonerDígito(dígito) { 
+procedure AuxPonerDígito(dígito) {
     AuxSacarTodas()
     AuxPoner__Veces(aux_colorParaElTipo(), aux_códigoParaElTipoDígito())
     AuxPoner__Veces(aux_colorParaElDato(), aux_códigoParaElDatoDígito(dígito))
@@ -392,7 +392,7 @@ procedure AuxSacarNúmeroPorDígitosActual() {
   if (movióDeMás) /* Retrocede un lugar */ { AuxAvanzarRecorridoGral(Oeste, Norte) }
 }
 
-procedure AuxOcultarNúmeroPorDígitosActual()    { 
+procedure AuxOcultarNúmeroPorDígitosActual()    {
   movióDeMás := False
   while (not aux_terminóElRecorridoGral(Este, Sur) && aux_hayDígito() && not aux_elDígitoEstáOcultoConBoom()) {
     AuxOcultarDígitoActual()
@@ -402,8 +402,8 @@ procedure AuxOcultarNúmeroPorDígitosActual()    {
   if (aux_hayDígito())                     { AuxOcultarDígitoActual()              }
   if (movióDeMás) /* Retrocede un lugar */ { AuxAvanzarRecorridoGral(Oeste, Norte) }
  }
- 
- procedure AuxRevelarNúmeroPorDígitosActual() { 
+
+ procedure AuxRevelarNúmeroPorDígitosActual() {
   // PRECONDICIÓN: hay un número por dígitos oculto en la celda actual
   movióDeMás := False
   while (not aux_terminóElRecorridoGral(Este, Sur) && aux_hayDígito() && aux_elDígitoEstáOcultoConBoom()) {
@@ -415,18 +415,18 @@ procedure AuxOcultarNúmeroPorDígitosActual()    {
   if (movióDeMás) /* Retrocede un lugar */ { AuxAvanzarRecorridoGral(Oeste, Norte) }
 
  }
- 
 
-procedure AuxOcultarDígitoActual()    { 
+
+procedure AuxOcultarDígitoActual()    {
   // PRECONDICIÓN: hay un dígito no oculto en la celda actual
    AuxPonerAtributoReverso()
  }
- 
- procedure AuxRevelarDígitoActual() { 
+
+ procedure AuxRevelarDígitoActual() {
   // PRECONDICIÓN: hay un dígito oculto en la celda actual
    AuxSacarAtributoReverso()
  }
- 
+
 //---------------------------------------------------------------------------------------------------/
 /*---------------------------- Operaciones auxiliares de codificación -------------------------------/
 /---------------------------------------------------------------------------------------------------*/
@@ -465,9 +465,9 @@ function aux_códigoParaElNúmeroPorDígitos(númeroPorDígitos) {
 /*----------------------- Operaciones auxiliares de codificación para el tablero --------------------/
 /---------------------------------------------------------------------------------------------------*/
 function aux_códigoParaElTipoDígito()       { return(1)                              }
-function aux_códigoParaElDatoDígito(dígito) { 
+function aux_códigoParaElDatoDígito(dígito) {
     if (not aux_esDatoDígito(dígito)) { BOOM("En números por dígitos solo se representan dígitos en el tablero") }
-    return(aux_códigoParaElDígito(dígito)) 
+    return(aux_códigoParaElDígito(dígito))
 }
 
 function aux_esTipoDígito(código) { return (código == aux_códigoParaElTipoDígito())  }
@@ -552,9 +552,9 @@ function aux_esDatoDígito(dato)   { return (aux_esUnDígitoVálido(dato))      
 //---------------------------------------------------------------------------------------------------/
 /*--------------------------- Auxiliares para sensar números en el tablero --------------------------/
 /---------------------------------------------------------------------------------------------------*/
-function aux_hayNúmero() { 
-  return (aux_hayTipoNúmero() 
-       && aux_hayDatoNúmero()) 
+function aux_hayNúmero() {
+  return (aux_hayTipoNúmero()
+       && aux_hayDatoNúmero())
 }
 
 function aux_hayTipoNúmero() { return (aux_esTipoNúmero(aux_leerTipo())) }
@@ -567,7 +567,7 @@ function aux_elNúmeroEstáOculto() {
 
 function aux_elNúmeroEstáOcultoConBoom() {
   if (not aux_hayNúmero()) { BOOM("No hay un número que pueda estar oculto") }
-  return(aux_elNúmeroEstáOculto())    
+  return(aux_elNúmeroEstáOculto())
 }
 
 //---------------------------------------------------------------------------------------------------/
@@ -587,28 +587,28 @@ function aux_númeroOculto() {
   return(aux_númeroParaElCódigo(aux_leerDato()))
 }
 
-procedure AuxPonerNúmero(número) { 
+procedure AuxPonerNúmero(número) {
     AuxSacarTodas()
     AuxPonerRepresentaciónParaElNúmero(número)
 }
 
-procedure AuxSacarNúmeroActual() { 
+procedure AuxSacarNúmeroActual() {
   if (not(aux_hayNúmero())) { BOOM("No hay un número que sacar") }
-  AuxSacarRepresentaciónParaElNúmero() 
+  AuxSacarRepresentaciónParaElNúmero()
 }
 
-procedure AuxOcultarNúmeroActual()    { 
+procedure AuxOcultarNúmeroActual()    {
   // PRECONDICIÓN: hay un número en la celda actual. Si está oculto, no hace nada
   if (not aux_hayNúmero())          { BOOM("No hay número que ocultar") }
   if (not aux_elNúmeroEstáOculto()) { AuxPonerAtributoReverso()         }
  }
- 
- procedure AuxRevelarNúmeroActual() { 
+
+ procedure AuxRevelarNúmeroActual() {
   // PRECONDICIÓN: hay un número en la celda actual. Si no está oculto, no hace nada
   if (not aux_hayNúmero())      { BOOM("No hay número que revelar") }
   if (aux_elNúmeroEstáOculto()) { AuxSacarAtributoReverso()         }
  }
- 
+
 //---------------------------------------------------------------------------------------------------/
 /*---------------------------- Operaciones auxiliares de codificación -------------------------------/
 /---------------------------------------------------------------------------------------------------*/
@@ -667,9 +667,9 @@ procedure AuxSacarRepresentaciónParaElNúmero() {
 //---------------------------------------------------------------------------------------------------/
 /*-------------------------------------- Definiciones de tipos --------------------------------------/
 /---------------------------------------------------------------------------------------------------*/
-type Letra is variant { 
-   case Espacio {} 
-   case A {}    case B {}    case C {}    case D {}    case E {}    case F {}    case G {}    case H {}    case I {}    
+type Letra is variant {
+   case Espacio {}
+   case A {}    case B {}    case C {}    case D {}    case E {}    case F {}    case G {}    case H {}    case I {}
    case J {}    case K {}    case L {}    case M {}    case N {}    case Ñ {}    case O {}    case P {}    case Q {}
    case R {}    case S {}    case T {}    case U {}    case V {}    case W {}    case X {}    case Y {}    case Z {}
 }
@@ -729,7 +729,7 @@ type Letra is variant {
 /*------------------------------ Auxiliares para construir letras ----------------------------------/
 /---------------------------------------------------------------------------------------------------*/
 /* NO HAY OPERACIONES ESPECÍFICAS DE CONSTRUCCIÓN de Letras
-   Se proveen con los constructores del tipo 
+   Se proveen con los constructores del tipo
  */
 
 //---------------------------------------------------------------------------------------------------/
@@ -747,9 +747,9 @@ function aux_letraPrevia(letra)    { return (aux_letraParaElCódigo(aux_códigoP
 //---------------------------------------------------------------------------------------------------/
 /*---------------------------- Auxiliares para sensar letras en el tablero --------------------------/
 /---------------------------------------------------------------------------------------------------*/
-function aux_hayLetra() { 
-  return (aux_hayTipoLetra() 
-       && aux_hayDatoLetra()) 
+function aux_hayLetra() {
+  return (aux_hayTipoLetra()
+       && aux_hayDatoLetra())
 }
 
 function aux_hayTipoLetra() { return (aux_esTipoLetra(aux_leerTipo())) }
@@ -762,7 +762,7 @@ function aux_laLetraEstáOculta() {
 
 function aux_laLetraEstáOcultaConBoom() {
   if (not aux_hayLetra()) { BOOM("No hay una letra que pueda estar oculta") }
-  return(aux_elNúmeroEstáOculto())    
+  return(aux_elNúmeroEstáOculto())
 }
 
 //---------------------------------------------------------------------------------------------------/
@@ -773,7 +773,7 @@ function aux_letraActual() {
   if (not (aux_hayLetra()))      { BOOM("No hay una letra que pueda leer") }
   if (aux_laLetraEstáOculta())   { BOOM("Con esta operación solo puedo ver letras que no están ocultas") }
   return(aux_letraParaElCódigo(aux_leerDato()))
-}         
+}
 
 function aux_letraOculta() {
   // PRECONDICIÓN: hay una letra oculta en la celda actual
@@ -793,18 +793,18 @@ procedure AuxSacarLetraActual() {
   AuxSacarRepresentaciónParaLaLetra()
 }
 
-procedure AuxOcultarLetraActual()    { 
+procedure AuxOcultarLetraActual()    {
   // PRECONDICIÓN: hay una letra en la celda actual. Si está oculta, no hace nada
   if (not aux_hayLetra())          { BOOM("No hay letra que ocultar") }
   if (not aux_laLetraEstáOculta()) { AuxPonerAtributoReverso()        }
  }
- 
- procedure AuxRevelarLetraActual() { 
+
+ procedure AuxRevelarLetraActual() {
   // PRECONDICIÓN: hay una letra en la celda actual. Si no está oculta, no hace nada
   if (not aux_hayLetra())      { BOOM("No hay letra que revelar") }
   if (aux_laLetraEstáOculta()) { AuxSacarAtributoReverso()         }
  }
- 
+
 //---------------------------------------------------------------------------------------------------/
 /*---------------------------- Operaciones auxiliares de codificación -------------------------------/
 /---------------------------------------------------------------------------------------------------*/
@@ -812,7 +812,7 @@ function aux_minCódigoParaLaLetra() { return(10) }
 function aux_maxCódigoParaLaLetra() { return(37) }
 
 function aux_esCódigoParaLaLetra(códigoLetra) {
-  return (códigoLetra >= aux_minCódigoParaLaLetra() 
+  return (códigoLetra >= aux_minCódigoParaLaLetra()
        && códigoLetra <= aux_maxCódigoParaLaLetra())
 }
 
@@ -851,7 +851,7 @@ function aux_códigoParaLaLetra(letra) {
 }
 
 function aux_letraParaElCódigo(códigoLetra) {
-  // PRECONDICIÓN: el código es válido, o sea, corresponde a una letra 
+  // PRECONDICIÓN: el código es válido, o sea, corresponde a una letra
   //               (está entre aux_minCódigoParaLaLetra() y aux_maxCódigoParaLaeLetra())
   if (not aux_esCódigoParaLaLetra(códigoLetra)) { BOOM("No es un código de letra válido") }
   return (choose
@@ -889,7 +889,7 @@ function aux_letraParaElCódigo(códigoLetra) {
 
 function aux_códigoParaLaLetraSiguiente(letra) {
   códigoLetra := aux_códigoParaLaLetra(letra)
-  return (choose 
+  return (choose
            aux_minCódigoParaLaLetra()  when (códigoLetra == aux_maxCódigoParaLaLetra())
            códigoLetra+1               otherwise
          )
@@ -897,7 +897,7 @@ function aux_códigoParaLaLetraSiguiente(letra) {
 
 function aux_códigoParaLaLetraPrevia(letra) {
   códigoLetra := aux_códigoParaLaLetra(letra)
-  return (choose 
+  return (choose
            aux_maxCódigoParaLaLetra()  when (códigoLetra == aux_minCódigoParaLaLetra())
            códigoLetra-1               otherwise
          )
@@ -1033,13 +1033,13 @@ function aux_paloDeCartaEspañolaPrevio(palo)    { return (aux_paloDeCartaEspañ
 function aux_minCódigoParaElPaloDeCartaEspañola() { return (1) }
 function aux_maxCódigoParaElPaloDeCartaEspañola() { return (4) }
 
-function aux_esCódigoParaElPaloDeCartaEspañola(códigoPalo) {   
-  return (códigoPalo >= aux_minCódigoParaElPaloDeCartaEspañola() 
+function aux_esCódigoParaElPaloDeCartaEspañola(códigoPalo) {
+  return (códigoPalo >= aux_minCódigoParaElPaloDeCartaEspañola()
        && códigoPalo <= aux_maxCódigoParaElPaloDeCartaEspañola())
 }
 
-function aux_códigoParaElPaloDeCartaEspañola(palo) { 
-  return (choose 
+function aux_códigoParaElPaloDeCartaEspañola(palo) {
+  return (choose
      1 when (palo == Bastos )
      2 when (palo == Copas  )
      3 when (palo == Espadas)
@@ -1063,7 +1063,7 @@ function aux_paloDeCartaEspañolaParaElCódigo(códigoPalo) {
 
 function aux_códigoParaElPaloDeCartaEspañolaSiguiente(palo) {
   códigoPalo := aux_códigoParaElPaloDeCartaEspañola(palo)
-  return (choose 
+  return (choose
            aux_minCódigoParaElPaloDeCartaEspañola()  when (códigoPalo == aux_maxCódigoParaElPaloDeCartaEspañola())
            códigoPalo+1                              otherwise
          )
@@ -1071,7 +1071,7 @@ function aux_códigoParaElPaloDeCartaEspañolaSiguiente(palo) {
 
 function aux_códigoParaElPaloDeCartaEspañolaPrevio(palo) {
   códigoPalo := aux_códigoParaElPaloDeCartaEspañola(palo)
-  return (choose 
+  return (choose
            aux_maxCódigoParaElPaloDeCartaEspañola()  when (códigoPalo == aux_minCódigoParaElPaloDeCartaEspañola())
            códigoPalo-1                              otherwise
          )
@@ -1177,15 +1177,15 @@ function aux_códigoParaElValorDeCartaEspañolaPrevio(valor)     { return (aux_c
 /---------------------------------------------------------------------------------------------------*/
 function aux_armarValorDeCartaEspañolaDe50(valor) {
   if (not aux_esValorNoFiguraDeCartaEspañola(valor)) { BOOM("No es un valor válido de una carta española de 50 cartas para una carta numérica")}
-  return(valor) 
+  return(valor)
 }
- 
+
 function aux_armarValorDeCartaEspañolaDe40(valor) {
   if (not aux_esValorNoFiguraDeCartaEspañola(valor)) { BOOM("No es un valor válido de una carta española de 40 cartas para una carta numérica")}
-  return(valor) 
+  return(valor)
 }
 // ATENCIÓN: Cambia el mensaje de error; el comportamiento se decide en la subtarea
- 
+
 //---------------------------------------------------------------------------------------------------/
 /*------------------------------ Auxiliares para acceso a valores -----------------------------------/
 /---------------------------------------------------------------------------------------------------*/
@@ -1198,7 +1198,7 @@ function aux_esValorNoFiguraDeCartaEspañola(valor) { return (aux_esCódigoParaE
 function aux_esMenorValorDeCartaEspañola(valor1, valor2) { return (aux_códigoParaElValorDeCartaEspañola(valor1) < aux_códigoParaElValorDeCartaEspañola(valor2)) }
 function aux_esMayorValorDeCartaEspañola(valor1, valor2) { return (aux_códigoParaElValorDeCartaEspañola(valor1) > aux_códigoParaElValorDeCartaEspañola(valor2)) }
     // ATENCIÓN: dependen de la elección de la auxiliar si es de 40 o de 50 cartas
-  
+
 function aux_minValorDeCartaEspañola() { return (aux_minCódigoParaElValorDeCartaEspañola()) }
 function aux_maxValorDeCartaEspañola() { return (aux_maxCódigoParaElValorDeCartaEspañola()) }
 
@@ -1226,59 +1226,59 @@ function aux_valorDeCartaEspañolaPrevio(valor)    { return (aux_códigoParaElVa
 function aux_minCódigoParaElValorDeCartaEspañola() { return (1)  }
 function aux_maxCódigoParaElValorDeCartaEspañola() { return (12) }
 
-function aux_esCódigoParaElValorDeCartaEspañolaDe50(códigoValor) {   
-  return (códigoValor >= aux_minCódigoParaElValorDeCartaEspañola() 
+function aux_esCódigoParaElValorDeCartaEspañolaDe50(códigoValor) {
+  return (códigoValor >= aux_minCódigoParaElValorDeCartaEspañola()
        && códigoValor <= aux_maxCódigoParaElValorDeCartaEspañola())
 }
 
-function aux_esCódigoParaElValorDeCartaEspañolaDe40(códigoValor) {   
-  return (códigoValor >= aux_minCódigoParaElValorDeCartaEspañola() 
+function aux_esCódigoParaElValorDeCartaEspañolaDe40(códigoValor) {
+  return (códigoValor >= aux_minCódigoParaElValorDeCartaEspañola()
        && códigoValor <= aux_maxCódigoParaElValorDeCartaEspañola()
        && códigoValor /= 8 && códigoValor /= 9
          )
 }
 
-function aux_esCódigoParaElValorNoFiguraDeCartaEspañolaDe50(códigoValor) {   
+function aux_esCódigoParaElValorNoFiguraDeCartaEspañolaDe50(códigoValor) {
   return (aux_esCódigoParaElValorDeCartaEspañolaDe40(códigoValor)
        && códigoValor >= 2 && códigoValor <= 9
          )
 }
 
-function aux_esCódigoParaElValorNoFiguraDeCartaEspañolaDe40(códigoValor) {   
+function aux_esCódigoParaElValorNoFiguraDeCartaEspañolaDe40(códigoValor) {
   return (aux_esCódigoParaElValorDeCartaEspañolaDe40(códigoValor)
        && códigoValor >= 2 && códigoValor <= 7
          )
 }
 
-function aux_códigoParaElValorDeCartaEspañola(valor)  { 
+function aux_códigoParaElValorDeCartaEspañola(valor)  {
   if (not aux_esValorDeCartaEspañola(valor)) { BOOM("No es un valor válido para una carta española") }
-  return (valor) 
+  return (valor)
 }
 
-function aux_valorDeCartaEspañolaParaElCódigo(códigoValor) { 
+function aux_valorDeCartaEspañolaParaElCódigo(códigoValor) {
   if (not aux_esCódigoParaElValorDeCartaEspañola(códigoValor)) { BOOM("No es un código válido para el valor de una carta española") }
-  return (códigoValor) 
+  return (códigoValor)
 }
 
 //-----------
 // PARA aux_códigoParaElValorDeCartaEspañolaSiguiente y aux_códigoParaElValorDeCartaEspañolaPrevio VER SECCIÓN DE MODULARIZACIÓN DE 40 a 50 cartas
 //-----------
 function aux_códigoParaElValorDeCartaEspañolaDe50Siguiente(valor) {
-  return (choose 
+  return (choose
            aux_minCódigoParaElValorDeCartaEspañola()  when (valor == aux_maxCódigoParaElValorDeCartaEspañola())
            valor+1                                    otherwise
          )
 }
 
 function aux_códigoParaElValorDeCartaEspañolaDe50Previo(valor) {
-  return (choose 
+  return (choose
            aux_maxCódigoParaElValorDeCartaEspañola()  when (valor == aux_minCódigoParaElValorDeCartaEspañola())
            valor-1                                    otherwise
          )
 }
 
 function aux_códigoParaElValorDeCartaEspañolaDe40Siguiente(valor) {
-  return (choose 
+  return (choose
            aux_minCódigoParaElValorDeCartaEspañola()  when (valor == aux_maxCódigoParaElValorDeCartaEspañola())
            10                                         when (valor == 7)
            valor+1                                    otherwise
@@ -1286,7 +1286,7 @@ function aux_códigoParaElValorDeCartaEspañolaDe40Siguiente(valor) {
 }
 
 function aux_códigoParaElValorDeCartaEspañolaDe40Previo(valor) {
-  return (choose 
+  return (choose
            aux_maxCódigoParaElValorDeCartaEspañola()  when (valor == aux_minCódigoParaElValorDeCartaEspañola())
            7                                          when (valor == 10)
            valor-1                                    otherwise
@@ -1325,10 +1325,10 @@ function aux_códigoParaElValorDeCartaEspañolaDe40Previo(valor) {
 //---------------------------------------------------------------------------------------------------/
 /*-------------------------------------- Definiciones de tipos --------------------------------------/
 /---------------------------------------------------------------------------------------------------*/
-type CartaEspañola is variant { 
-                                case Carta   { 
-                                  field valor 
-                                  field palo 
+type CartaEspañola is variant {
+                                case Carta   {
+                                  field valor
+                                  field palo
                                 }
                                 case Comodín {}
                               }
@@ -1430,7 +1430,7 @@ function aux_armarComodínDe40() { return(boom("No hay comodín en un mazo de ca
 function aux_armarCartaEspañola(valor,palo) {
   // PRECONDICIÓN: valor y palo corresponden a los de una carta válida
   if (not aux_esValorDeCartaEspañola(valor)) { BOOM("No existen cartas de ese valor") }
-  return(Carta(valor <- valor, palo <- palo)) 
+  return(Carta(valor <- valor, palo <- palo))
 }
 
 //---------------------------------------------------------------------------------------------------/
@@ -1438,21 +1438,21 @@ function aux_armarCartaEspañola(valor,palo) {
 /---------------------------------------------------------------------------------------------------*/
 // BÁSICAS
 function aux_esComodínDe50(carta) { return(carta==aux_armarComodín()) }
-function aux_esComodínDe40(carta) { 
+function aux_esComodínDe40(carta) {
    if (carta == Comodín) { BOOM("¿Armaste el comodín por tu cuenta? Eso no está bien, porque no hay comodín en un mazo de cartas españolas de 40 cartas") }
-   return(False)                     
+   return(False)
 }
 
-function aux_dameElPalo(carta) { 
+function aux_dameElPalo(carta) {
   // PRECONDICIÓN: la carta no es el comodín
   if (aux_esComodín(carta)) { BOOM("El comodín no tiene palo") }
-  return(palo(carta)) 
+  return(palo(carta))
 }
 
-function aux_dameElValor(carta) { 
+function aux_dameElValor(carta) {
   // PRECONDICIÓN: la carta no es el comodín
   if (aux_esComodín(carta)) { BOOM("El comodín no tiene valor") }
-  return(valor(carta)) 
+  return(valor(carta))
 }
 
 // ESTÁNDAR
@@ -1461,37 +1461,37 @@ function aux_esMenorCartaEspañola(carta1, carta2) {
            /* si la carta1 no es comodín, la carta2 debe serlo, y entonces carta1 es menor,
             y si la carta1 es comodín, la carta1 NO puede ser menor que la carta2 (a lo sumo es igual)
            */
-           not aux_esComodín(carta1)                                   when (aux_esComodín(carta1) 
+           not aux_esComodín(carta1)                                   when (aux_esComodín(carta1)
                                                                           || aux_esComodín(carta2))
            aux_esMenorPaloDeCartaEspañola(aux_dameElPalo(carta1)
-                                          ,aux_dameElPalo(carta2)) 
-        || (aux_dameElPalo(carta1) == aux_dameElPalo(carta2) 
+                                          ,aux_dameElPalo(carta2))
+        || (aux_dameElPalo(carta1) == aux_dameElPalo(carta2)
          && aux_esMenorValorDeCartaEspañola(aux_dameElValor(carta1)
                                            ,aux_dameElValor(carta2)))  otherwise
   )
 }
-         
+
 function aux_esMayorCartaEspañola(carta1, carta2) {
   return(choose
            /* si la carta2 no es comodín, la carta1 debe serlo, y entonces carta1 es mayor
             y si la carta2 es comodín, la carta1 NO puede ser mayor que la carta2 (a lo sumo es igual)
            */
-           not aux_esComodín(carta1)                                   when (aux_esComodín(carta1) 
+           not aux_esComodín(carta1)                                   when (aux_esComodín(carta1)
                                                                           || aux_esComodín(carta2))
            aux_esMayorPaloDeCartaEspañola(aux_dameElPalo(carta1)
-                                         ,aux_dameElPalo(carta2)) 
-        || (aux_dameElPalo(carta1) == aux_dameElPalo(carta2) 
+                                         ,aux_dameElPalo(carta2))
+        || (aux_dameElPalo(carta1) == aux_dameElPalo(carta2)
          && aux_esMayorValorDeCartaEspañola(aux_dameElValor(carta1)
                                            ,aux_dameElValor(carta2)))  otherwise
   )
 }
-         
+
 function aux_minCartaEspañola()     { return(aux_armarCartaEspañola(aux_minValorDeCartaEspañola()
                                                                    ,aux_minPaloDeCartaEspañola())) }
 function aux_maxCartaEspañolaDe50() { return(aux_armarComodín())                                   }
 function aux_maxCartaEspañolaDe40() { return(aux_armarCartaEspañola(aux_maxValorDeCartaEspañola()
                                                                    ,aux_maxPaloDeCartaEspañola())) }
-                                                              
+
 function aux_cartaEspañolaSiguienteDe50(carta) {
   if (carta == aux_maxCartaEspañola())
         { resultado := aux_minCartaEspañola() }
@@ -1512,7 +1512,7 @@ function aux_cartaEspañolaSiguienteDe40(carta) {
   if (aux_esComodín(carta)) { BOOM("NO PUEDE SUCEDER, es un mazo de 40 cartas") }
   if (carta == aux_maxCartaEspañola())
         { resultado := aux_minCartaEspañola() }
-   else { 
+   else {
       valorCarta := aux_dameElValor(carta)
       paloCarta := aux_dameElPalo(carta)
       if     (valorCarta < aux_maxValorDeCartaEspañola())
@@ -1565,23 +1565,23 @@ function aux_hayCartaEspañola() { return (aux_hayTipoCartaEspañola() && aux_ha
 function aux_hayTipoCartaEspañola() { return (aux_esTipoCartaEspañola(aux_leerTipo())) }
 function aux_hayDatoCartaEspañola() { return (aux_esDatoCartaEspañola(aux_leerDato())) }
 
-function aux_laCartaEspañolaEstáTapada() { 
+function aux_laCartaEspañolaEstáTapada() {
   // PRECONDICIÓN: hay una carta española
   return (aux_hayAtributoReverso())
 }
 
-function aux_laCartaEspañolaEstáTapadaConBoom() { 
+function aux_laCartaEspañolaEstáTapadaConBoom() {
   if (not aux_hayCartaEspañola()) { BOOM("No hay una carta que pueda estar tapada") }
-  return(aux_laCartaEspañolaEstáTapada())    
+  return(aux_laCartaEspañolaEstáTapada())
 }
 
-function aux_hayCartaEspañolaTapada() { 
-  return (aux_hayCartaEspañola()           
+function aux_hayCartaEspañolaTapada() {
+  return (aux_hayCartaEspañola()
        && aux_laCartaEspañolaEstáTapada())
 }
 
-function aux_hayCartaEspañolaDestapada() { 
-  return (aux_hayCartaEspañola()           
+function aux_hayCartaEspañolaDestapada() {
+  return (aux_hayCartaEspañola()
        && not aux_laCartaEspañolaEstáTapada())
 }
 
@@ -1593,19 +1593,19 @@ function aux_cartaEspañolaActual() {
   if (not aux_hayCartaEspañola())      { BOOM("No hay una carta española que pueda leer") }
   if (aux_laCartaEspañolaEstáTapada()) { BOOM("No puedo leer una carta española tapada")  }
   return(aux_cartaEspañolaParaElCódigo(aux_leerDato()))
-}         
+}
 
 function aux_cartaEspañolaTapada() {
   // PRECONDICIÓN: hay una carta tapada en la celda actual
   if (not aux_hayCartaEspañola())          { BOOM("No hay una carta española que pueda leer") }
   if (not aux_laCartaEspañolaEstáTapada()) { BOOM("Con esta operación solo puedo leer cartas tapadas")  }
   return(aux_cartaEspañolaParaElCódigo(aux_leerDato()))
-}         
+}
 
 procedure AuxPonerCartaEspañolaTapada(carta) {
   // PRECONDICIÓN: no hay una carta española en la celda actual
   /* El BOOM lo hace AuxPonerCartaEspañolaDestapada
-  // if (aux_hayCartaEspañola()) { BOOM("No puedo bajar una carta española donde ya hay una") } 
+  // if (aux_hayCartaEspañola()) { BOOM("No puedo bajar una carta española donde ya hay una") }
   */
   AuxPonerCartaEspañolaDestapada(carta)
   AuxTaparLaCartaEspañolaActual()   // La carta recién puesta no está iluminada
@@ -1629,17 +1629,17 @@ procedure AuxDarVueltaLaCartaEspañolaActual() {
   if (not aux_hayCartaEspañola())         { BOOM("No hay una carta que pueda girar")   }
   if (not aux_laCartaEspañolaEstáTapada()  // Para garantizar el invariante de la condición siguiente
    && aux_laCartaEspañolaEstáIluminada()) { BOOM("No puedo girar una carta iluminada") }
-  if (aux_laCartaEspañolaEstáTapada()) 
+  if (aux_laCartaEspañolaEstáTapada())
        { AuxDestaparLaCartaEspañolaActual() }
   else { AuxTaparLaCartaEspañolaActual()    }
 }
 
-procedure AuxTaparLaCartaEspañolaActual()    { 
+procedure AuxTaparLaCartaEspañolaActual()    {
  // PRECONDICIÓN: hay una carta española destapada y no iluminada en la celda actual
   AuxPonerAtributoReverso()
 }
 
-procedure AuxDestaparLaCartaEspañolaActual() { 
+procedure AuxDestaparLaCartaEspañolaActual() {
  // PRECONDICIÓN: hay una carta española tapada en la celda actual
   AuxSacarAtributoReverso()
 }
@@ -1661,7 +1661,7 @@ function aux_analizarDatoCarta(códigoCartaEspañola) {
 }
 
 function aux_producirDatoCarta(códigoValor, códigoPalo) {
-  /* PRECONDICIÓN: códigoValor es un código de carta española válido, 
+  /* PRECONDICIÓN: códigoValor es un código de carta española válido,
                  y códigoPalo es un código de palo de carta española válido
   */
  if (not (aux_sonValorYPaloDeCartaEspañola(códigoValor, códigoPalo))) { BOOM("El código del valor o del palo no es válido") }
@@ -1672,8 +1672,8 @@ function aux_producirDatoCarta(códigoValor, códigoPalo) {
 }
 
 function aux_sonValorYPaloDeCartaEspañola(códigoValor, códigoPalo) {
-  return(aux_esCódigoParaElComodín(códigoPalo) || 
-         (aux_esCódigoParaElValorDeCartaEspañola(códigoValor) 
+  return(aux_esCódigoParaElComodín(códigoPalo) ||
+         (aux_esCódigoParaElValorDeCartaEspañola(códigoValor)
        && aux_esCódigoParaElPaloDeCartaEspañola(códigoPalo))
         )
 }
@@ -1687,12 +1687,12 @@ function aux_esCódigoParaLaCartaEspañola(códigoCartaEspañola) {
   return (aux_sonValorYPaloDeCartaEspañola(códigoValor, códigoPalo))
 }
 
-function aux_códigoParaLaCartaEspañola(carta) { 
+function aux_códigoParaLaCartaEspañola(carta) {
   return(choose
            aux_producirDatoCarta(0, aux_códigoParaElComodín())                      when (aux_esComodín(carta))
            aux_producirDatoCarta(aux_códigoParaElValorDeCartaEspañola(valor(carta))
                                 ,aux_códigoParaElPaloDeCartaEspañola(palo(carta)))  otherwise
-        ) 
+        )
 }
 
 function aux_cartaEspañolaParaElCódigo(códigoCarta) {
@@ -1721,13 +1721,13 @@ function aux_esDatoCartaEspañola(dato)   { return (aux_esCódigoParaLaCartaEspa
 
 procedure AuxPonerRepresentaciónParaLaCartaEspañola(carta) {
   // PRECONDICIÓN: la celda está vacía
-  AuxPoner__Veces(aux_colorParaElTipo(), aux_códigoParaElTipoCartaEspañola()) 
-  AuxPoner__Veces(aux_colorParaElDato(), aux_códigoParaElDatoCartaEspañola(carta)) 
+  AuxPoner__Veces(aux_colorParaElTipo(), aux_códigoParaElTipoCartaEspañola())
+  AuxPoner__Veces(aux_colorParaElDato(), aux_códigoParaElDatoCartaEspañola(carta))
 }
 
-procedure AuxSacarRepresentaciónParaLaCartaEspañola() { 
+procedure AuxSacarRepresentaciónParaLaCartaEspañola() {
    // PRECONDICIÓN: hay una representación de cartas
-   AuxSacarTodas() 
+   AuxSacarTodas()
 }
 
 //---------------------------------------------------------------------------------------------------/
@@ -1739,14 +1739,14 @@ function aux_laCartaEspañolaEstáIluminada() {
   return (aux_hayAtributoIluminación())
 }
 
-function aux_laCartaEspañolaEstáIluminadaConBoom() { 
+function aux_laCartaEspañolaEstáIluminadaConBoom() {
   if (not aux_hayCartaEspañola())      { BOOM("No hay una carta española que pueda estar iluminada")     }
   if (aux_laCartaEspañolaEstáTapada()) { BOOM("Las cartas españolas tapadas no pueden estar iluminadas") }
-  return(aux_laCartaEspañolaEstáIluminada()) 
+  return(aux_laCartaEspañolaEstáIluminada())
 }
 
-function aux_hayCartaEspañolaDestapadaSinIluminar() { 
-  return (aux_hayCartaEspañola()           
+function aux_hayCartaEspañolaDestapadaSinIluminar() {
+  return (aux_hayCartaEspañola()
        && not aux_laCartaEspañolaEstáTapada()
        && not aux_laCartaEspañolaEstáIluminada())
 }
@@ -1755,27 +1755,27 @@ function aux_hayOtraCartaEspañolaDestapadaSinIluminar() {
   // PRECONDICIÓN: no hay ninguna celda marcada
   AuxMarcar()
   AuxIniciarRecorrido()
-  while (not aux_terminóElRecorrido() && not aux_hayCartaEspañolaDestapadaSinIluminarYSinMarca()) 
+  while (not aux_terminóElRecorrido() && not aux_hayCartaEspañolaDestapadaSinIluminarYSinMarca())
       { AuxAvanzarRecorrido() }
   valorDeRetorno := aux_hayCartaEspañolaDestapadaSinIluminarYSinMarca()
   AuxVolverALaMarca()
   AuxDesmarcar()
   return(valorDeRetorno)
-}                                    
+}
 
-function aux_hayCartaEspañolaDestapadaSinIluminarYSinMarca() { 
-   return (aux_hayCartaEspañolaDestapadaSinIluminar() && not aux_hayMarca()) 
+function aux_hayCartaEspañolaDestapadaSinIluminarYSinMarca() {
+   return (aux_hayCartaEspañolaDestapadaSinIluminar() && not aux_hayMarca())
 }
 
 // DE E/S
 procedure AuxIluminarLaCartaEspañolaActual() {
   /* PROPÓSITO:
       - si hay una carta destapada sin iluminar, la ilumina.
-      - en cualquier otro caso, no hace nada 
-        (las cartas tapadas o iluminadas permanecen igual y 
+      - en cualquier otro caso, no hace nada
+        (las cartas tapadas o iluminadas permanecen igual y
         si no hay carta, no pasa nada)
   */
-   if (aux_hayCartaEspañolaDestapadaSinIluminar()) { AuxPonerAtributoIluminación() } 
+   if (aux_hayCartaEspañolaDestapadaSinIluminar()) { AuxPonerAtributoIluminación() }
  }
 /*==================================================================================================*/
 /*----------------------- FIN AUXILIARES de 03-CartasEspañolasDe40-Base.gbs ------------------------*/
@@ -1817,25 +1817,27 @@ type Mazo is record {
 /---------------------------------------------------------------------------------------------------*/
 // function mazoVacío()                      { return(aux_armarMazoVacío())               }
 
-// /*@ATTRIBUTE@block_name@agregar al mazo _ la carta _ al final@*/ 
+// /*@ATTRIBUTE@block_name@agregar al mazo _ la carta _ al final@*/
 // function agregarAlFinalDelMazo__(m,c)     { return(aux_agregarAlFinalDelMazo(m,c))     }
-// /*@ATTRIBUTE@block_name@agregar al mazo _ la carta _ al principio@*/ 
+// /*@ATTRIBUTE@block_name@agregar al mazo _ la carta _ al principio@*/
 // function agregarAlPrincipioDelMazo__(m,c) { return(aux_agregarAlPrincipioDelMazo(m,c)) }
 
 // function juntarMazos__(m1,m2)             { return(aux_juntarMazos(m1,m2))             }
 // function mazoEspañol()                    { return(aux_mazoEspañolCompleto())          }
-  // 
+  //
 
 //---------------------------------------------------------------------------------------------------/
 /*----------------------- Operaciones de acceso a un mazo español (interfaz) ------------------------/
 /---------------------------------------------------------------------------------------------------*/
-/*@ATTRIBUTE@block_name@¿quedan cartas en _?@*/ 
+/*@ATTRIBUTE@block_name@¿quedan cartas en _?@*/
 function quedanCartas_(m)              { return(aux_quedanCartas(m))            }
 
-// /*@ATTRIBUTE@block_name@cantidad de cartas del mazo _@*/ 
+// /*@ATTRIBUTE@block_name@cantidad de cartas del mazo _@*/
 // function cantidadDeCartasDelMazo_(m)   { return(aux_cantidadDeCartasDelMazo(m)) }
 
+/*@ATTRIBUTE@block_name@la primera carta de _@*/
 function dameLaPrimeraCartaDe_(mazo)   { return(aux_dameLaPrimeraCarta(mazo))   }
+/*@ATTRIBUTE@block_name@sin la primera carta de _@*/
 function sacarLaPrimeraCartaDe_(mazo)  { return(aux_sacarLaPrimeraCarta(mazo))  }
 
 // function dameLaÚltimaCartaDe_(mazo)    { return(aux_dameLaÚltimaCarta(mazo))    }
@@ -1872,11 +1874,11 @@ function sacarLaPrimeraCartaDe_(mazo)  { return(aux_sacarLaPrimeraCarta(mazo))  
 //---------------------------------------------------------------------------------------------------/
 /*------------------------ Auxiliares para construir mazos españoles --------------------------------/
 /---------------------------------------------------------------------------------------------------*/
-function aux_armarMazoVacío()                { return(Mazo(cartas<-[]            
+function aux_armarMazoVacío()                { return(Mazo(cartas<-[]
                                                           ,tamaño<-0))                     }
 function aux_agregarAlFinalDelMazo(m, c)     { return(Mazo(cartas<-cartas(m)++[c]
                                                           ,tamaño<-tamaño(m)+1))           }
-function aux_agregarAlPrincipioDelMazo(m, c) { return(Mazo(cartas<-[c]++cartas(m)                                                     
+function aux_agregarAlPrincipioDelMazo(m, c) { return(Mazo(cartas<-[c]++cartas(m)
                                                           ,tamaño<-tamaño(m)+1))           }
 function aux_juntarMazos(m1,m2)              { return(Mazo(cartas<-cartas(m1)++cartas(m2)
                                                           ,tamaño<-tamaño(m1)+tamaño(m2))) }
@@ -1948,7 +1950,7 @@ function aux_mazoTapado() {
 }
 
 function aux_mazoActualDesdeLaCeldaActual() {
-   // PROPÓSITO: lee todas las cartas destapadas que están a continuación, 
+   // PROPÓSITO: lee todas las cartas destapadas que están a continuación,
    //            a partir de la posición actual yendo al Este y luego al Sur
    cartasLeídas   := []
    cantidadLeídas := 0
@@ -1957,7 +1959,7 @@ function aux_mazoActualDesdeLaCeldaActual() {
       cantidadLeídas := cantidadLeídas + 1
       AuxAvanzarRecorridoGral(Este, Sur)
    }
-   if (aux_hayCartaEspañolaDestapada()) { 
+   if (aux_hayCartaEspañolaDestapada()) {
     cartasLeídas   := cartasLeídas ++ [ aux_cartaEspañolaActual() ]
     cantidadLeídas := cantidadLeídas + 1
   }
@@ -1966,7 +1968,7 @@ function aux_mazoActualDesdeLaCeldaActual() {
 }
 
 function aux_mazoTapadoDesdeLaCeldaActual() {
-   // PROPÓSITO: lee todas las cartas tapadas que están a continuación, 
+   // PROPÓSITO: lee todas las cartas tapadas que están a continuación,
    //            a partir de la posición actual yendo al Este y luego al Sur
    cartasLeídas   := []
    cantidadLeídas := 0
@@ -1975,7 +1977,7 @@ function aux_mazoTapadoDesdeLaCeldaActual() {
       cantidadLeídas := cantidadLeídas + 1
       AuxAvanzarRecorridoGral(Este, Sur)
    }
-   if (aux_hayCartaEspañolaTapada()) { 
+   if (aux_hayCartaEspañolaTapada()) {
     cartasLeídas   := cartasLeídas ++ [ aux_cartaEspañolaTapada() ]
     cantidadLeídas := cantidadLeídas + 1
   }
@@ -1984,7 +1986,7 @@ function aux_mazoTapadoDesdeLaCeldaActual() {
 }
 
 procedure AuxPonerMazo(mazo) {
-  // PROPÓSITO: muestra la parte del mazo que pueda entre la celda actual 
+  // PROPÓSITO: muestra la parte del mazo que pueda entre la celda actual
   //            y la esquina inferior derecha del tablero, de a una carta por celda
   // PRECONDICIÓN: las celdas donde vayan a ir cartas deben estar vacías
   faltanMostrar := cartas(mazo)
@@ -2000,7 +2002,7 @@ procedure AuxPonerMazo(mazo) {
 }
 
 procedure AuxSacarMazoActual() {
-   // PROPÓSITO: saca todas las cartas que están a continuación, 
+   // PROPÓSITO: saca todas las cartas que están a continuación,
    //            a partir de la posición actual yendo al Este y luego al Sur
    movióDeMás := False
    while (not aux_terminóElRecorridoGral(Este, Sur) && aux_hayCartaEspañolaDestapada()) {
@@ -2013,7 +2015,7 @@ procedure AuxSacarMazoActual() {
 }
 
 procedure AuxDarVueltaElMazoActual() {
-   // PROPÓSITO: da vuelta todas las cartas destapadas que están a continuación, 
+   // PROPÓSITO: da vuelta todas las cartas destapadas que están a continuación,
    //            a partir de la posición actual yendo al Este y luego al Sur
    movióDeMás := False
    while (not aux_terminóElRecorridoGral(Este, Sur) && aux_hayCartaEspañola()) {
@@ -2107,7 +2109,7 @@ function aux_armarRepresentaciónDeCartasDeMazoEspañolCompletoDe(palo) {
   }
                                                             // PROCESAR EL ÚLTIMO VALOR POR SEPARADO
   cartasARetornar   := cartasARetornar ++ [aux_armarCartaEspañola(valorActual, palo)]
-  cantidadARetornar := cantidadARetornar    +  1 
+  cantidadARetornar := cantidadARetornar    +  1
 
   return (cartasARetornar, cantidadARetornar)
 }
@@ -2186,9 +2188,9 @@ procedure AuxRepartirCarta(carta) {
    if (cantidadPuestas mod 2 == 0)
     then { AuxRepartirAlJugadorA(carta) }
     else { AuxRepartirAlJugadorB(carta) }
-    
+
    if (cantidadQueFaltan == 1)
-     { 
+     {
        cartasARepartir   := aux_mazoDeEntrada()
        cartasDelJugadorA := aux_mazoDelJugadorA()
        cartasDelJugadorB := aux_mazoDelJugadorB()
@@ -2211,8 +2213,8 @@ function aux_intercalar(as, bs) {
   ys := bs
   turnoXs := True
   while (xs/=[] && ys/=[]) {
-    if (turnoXs) 
-      then { zs := zs ++ [primero(xs)] 
+    if (turnoXs)
+      then { zs := zs ++ [primero(xs)]
              xs := resto(xs)
            }
       else { zs := zs ++ [primero(ys)]
@@ -2255,7 +2257,7 @@ function aux_listaDeSalida() {
 }
 
 function aux_listaDeNúmerosNoOcultosDesdeLaCeldaActual() {
-   // PROPÓSITO: lee todos los números no ocultos que están a continuación, 
+   // PROPÓSITO: lee todos los números no ocultos que están a continuación,
    //            a partir de la posición actual yendo al Este y luego al Sur
    númerosLeídos   := []
    while (not aux_terminóElRecorridoGral(Este, Sur) && aux_hayNúmeroNoOculto()) {
@@ -2268,7 +2270,7 @@ function aux_listaDeNúmerosNoOcultosDesdeLaCeldaActual() {
 }
 
 function aux_listaDeNúmerosOcultosDesdeLaCeldaActual() {
-   // PROPÓSITO: lee todos los números ocultos que están a continuación, 
+   // PROPÓSITO: lee todos los números ocultos que están a continuación,
    //            a partir de la posición actual yendo al Este y luego al Sur
    númerosLeídos   := []
    while (not aux_terminóElRecorridoGral(Este, Sur) && aux_hayNúmeroOculto()) {
@@ -2299,15 +2301,15 @@ function aux_cantidadDeElementos(lista) {
 
 function aux_máximoElemento(lista) {
    máximoElementoVisto := primero(lista)
-   foreach elemento in lista { 
+   foreach elemento in lista {
       if (elemento > máximoElementoVisto) { máximoElementoVisto := elemento }
    }
    return (máximoElementoVisto)
 }
- 
+
 function aux_mínimoElemento(lista) {
    mínimoElementoVisto := primero(lista)
-   foreach elemento in lista { 
+   foreach elemento in lista {
       if (elemento < mínimoElementoVisto) { mínimoElementoVisto := elemento }
    }
    return (mínimoElementoVisto)
@@ -2361,9 +2363,8 @@ procedure AuxIncrementarLaCuentaEnUno() {
   AuxDesmarcar()
 }
 
-function aux_mazoDesdeEstaPosición() { 
+function aux_mazoDesdeEstaPosición() {
    return (choose
              aux_mazoActual() when (aux_hayCartaEspañolaDestapada())
              aux_mazoTapado() otherwise)
 }
-                                     

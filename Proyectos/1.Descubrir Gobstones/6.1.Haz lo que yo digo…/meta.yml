@@ -21,7 +21,7 @@ execution_speed:
 attire:
   user_permissions:
     can_toggle_visibility: false
-  active: Alien
+  active: null
 initialDescription: true
 blocks:
   visible:

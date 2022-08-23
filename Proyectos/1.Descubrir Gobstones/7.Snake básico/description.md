@@ -28,7 +28,7 @@ uno de los que se muestran u otros diferentes.
 > Sería bueno que agregues un comentario que sirva de
 > recordatorio para saber que recorrido hace la vibora
 > para comer las manzanas. De esta forma _no hace falta_
-> _leer todo el código para entender como va a funcionar_
+> _leer todo el código para entender cómo va a funcionar_
 > _tu programa_.
 
 [Enunciado en PDF][PDF]

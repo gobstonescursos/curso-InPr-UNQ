@@ -14,7 +14,7 @@ Entonces, los tableros iniciales y sus correspondientes tableros finales pueden 
 
 Nuevamente tenemos más de un tablero inicial diferente, y el mismo programa debe funcionar en los dos, 
 aunque solo en los que la celda inicial tenga una bolita azul o una negra y nada más. 
-Pero, ¿cómo hacer para saber si "`Prender la luz`" o "`Apagar la luz`? 
+Pero, ¿cómo hacer para saber si "`Prender la luz`" o "`Apagar la luz`"? 
 Una vez más, tenés que explorar el entorno para encontrar las herramientas que hacen falta.
 
 > **Ayuda**
@@ -26,7 +26,7 @@ Una vez más, tenés que explorar el entorno para encontrar las herramientas que
 > - &nbsp;&nbsp; Apagar la luz.
 > - ¿Cómo se apaga la luz?
 > - &nbsp;&nbsp; Sacando la bolita azul, y poniendo una negra.
-> - ¿Y _**si**_ no hay una bolita azul?
+> - ¿Y _**si no**_ hay una bolita azul?
 > - &nbsp;&nbsp; Hay que prender la luz, porque si no hay bolita azul, entonces hay bolita negra, 
 >   y eso quiere decir que la luz está apagada.
 >

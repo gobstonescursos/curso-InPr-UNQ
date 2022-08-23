@@ -12,7 +12,7 @@ Lo importante es que pienses de entrada una estrategia de solución, dividiendo 
 procedimientos para expresarlas. 
 Para eso, conviene primero nombrar las cosas que vemos: por ejemplo, la diagonal superior de luces, o 
 la diagonal inferior. 
-Entonces, una buena subtarea sería expresada por un procedimiento llamado `SubirEncendiendoLaDiagonalInferior`.
+Entonces, una buena subtarea sería expresada por un procedimiento llamado `Subir encendiendo la diagonal inferior`.
 
 ¿Te atrevés a dar dos programas diferentes, con distintas estrategias de solución para solucionar este problema? 
 Fijate que también podés hacer un procedimiento para moverte de una diagonal a la otra… 

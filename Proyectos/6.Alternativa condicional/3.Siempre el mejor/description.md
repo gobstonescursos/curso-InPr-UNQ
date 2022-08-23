@@ -17,10 +17,10 @@ Cuando dos entrenadores envían a sus Gobstomon a una celda del tablero, se prod
 Las reglas del combate son simples: el Gobstomon con más nivel gana; el otro se retira del tablero y 
 vuelve con su entrenador; si los dos tienen el mismo nivel, ambos deben ser retirados.
 
-Mirá las partes que ya vienen hechas, incluído el procedimiento primitivo `SacarTodas_`. 
+Mirá las partes que ya vienen hechas, incluído el procedimiento primitivo `Sacar todas`. 
 El propósito del programa que tenés que hacer es simular el resultado de distintos combates Gobstomon 
 entre un Gikachu y un Garmander. 
-Para eso tenés que construir un procedimiento `PelearGikachuVSGarmander`. 
+Para eso tenés que construir un procedimiento `Pelear Gikachu vs Garmander`. 
 En cada tablero inicial habrá exactamente un Gikachu y un Garmander, aunque no sabemos de qué nivel. 
 El programa debe primero verificar si hay empate y sacarlos a ambos, y si no hay empate, entonces quitar 
 del tablero al Gobstomon de menor nivel. 

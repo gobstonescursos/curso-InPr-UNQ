@@ -17,7 +17,7 @@ El tablero inicial es el siguiente:
 Para hacer el programa, acordate que hay que pensar una estrategia de solución y expresarla con procedimientos.
 En este caso, los procedimientos que ya fueron comenzados ya tienen la estrategia pensada. 
 ¡Tenés que descubrir cuál es, para poder completarlos! 
-También vas a necesitar los procedimientos primitivos `MoverAlBetoAl`, `MoverLaPelotaAl` y `MoverElPieDelBeto`.
+También vas a necesitar los procedimientos primitivos `Mover al Beto al`, `Mover la pelota al` y `Mover el pie del Beto`.
 
 > **Recordatorio**
 >

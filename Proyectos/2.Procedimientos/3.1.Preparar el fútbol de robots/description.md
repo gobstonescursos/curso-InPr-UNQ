@@ -42,7 +42,7 @@ programa cumpla su cometido.
 > Al activar la vestimenta cambia el aspecto del tablero y se ve como si las celdas fueran otra cosa…
 > ¿Te acordás de la actividad de los caramelos y los tomates? 
 > En algunas actividades vos podés elegir activar o desactivar la vestimenta. Y cuando hagas tus propios
-> programas, vas a poder elegir qué vestimenta.
+> programas, vas a poder elegir vos la vestimenta que quieras.
 
 [Enunciado en PDF][PDF]
 

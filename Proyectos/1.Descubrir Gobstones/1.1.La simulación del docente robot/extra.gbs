@@ -1,8 +1,8 @@
-procedure IrAlPróximoEstudiante() 
+procedure IrASiguienteEstudiante() 
  {
-   AuxSacarMaestro()
+   AuxSacarDocente()
    AuxPasarASiguienteCelda() 
-   AuxPonerMaestro()
+   AuxPonerDocente()
  }
 
 procedure DarUnCaramelo() 
@@ -21,18 +21,18 @@ procedure ComerLosCaramelos() {
 
 procedure IrAlEscritorio() 
   { 
-    AuxSacarMaestro()   
+    AuxSacarDocente()   
     IrAlBorde(Oeste); IrAlBorde(Sur) 
-    AuxPonerMaestro()
+    AuxPonerDocente()
   }
 
-procedure AuxSacarMaestro() { 
-  if (nroBolitas(Negro) < 2) { BOOM("No está el maestro en esta celda") }
+procedure AuxSacarDocente() { 
+  if (nroBolitas(Negro) < 2) { BOOM("No hay docente en esta celda") }
   repeat(2) { Sacar(Negro) } 
 }
 
-procedure AuxPonerMaestro() { 
-  if (nroBolitas(Negro) >= 2) { BOOM("Ya está el maestro en esta celda") }
+procedure AuxPonerDocente() { 
+  if (nroBolitas(Negro) >= 2) { BOOM("Ya está le docente en esta celda") }
   repeat(2) { Poner(Negro) } 
 }
 
@@ -50,6 +50,6 @@ procedure AuxPasarASiguienteCelda() {
          { Mover(Este) } 
     else { if (puedeMover(Norte))
                 { Mover(Norte) IrAlBorde(Oeste) } 
-           else { BOOM("Se terminaron los estudiantes y no puedo pasar al siguiente") }
+           else { BOOM("Se terminaron les estudiantes y no hay siguiente") }
          }
 }

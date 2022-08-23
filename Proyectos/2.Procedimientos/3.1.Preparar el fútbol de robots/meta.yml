@@ -25,18 +25,15 @@ attire:
   active: Fútbol de robots
 initialDescription: true
 blocks:
-  visible:
-    - COMANDOS
-    - Poner
-    - Sacar
-    - Mover
-    - IrAlBorde
-    - EXPRESIONES
-    - Color
-    - Direccion
-    - DEFINICIONES
-  disabled:
-    - IrAlBorde
+  disabled: [ "IrAlBorde"
+            , "Procedimientos primitivos"
+            ]
+  visible: [ "COMANDOS"    , "Poner", "Mover", "Sacar", "IrAlBorde"
+                           , "Procedimientos primitivos"
+                           , "Mis procedimientos"
+           , "EXPRESIONES" , "Color", "Direccion"
+           , "DEFINICIONES", "procedures_defnoreturnnoparams"
+           ]
   defaultToolbox: |
     <category name="COMANDOS">
     </category>

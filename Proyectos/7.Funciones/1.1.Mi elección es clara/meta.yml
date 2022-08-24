@@ -23,35 +23,30 @@ attire:
   active: null
 initialDescription: true
 blocks:
-  visible:
-    - COMANDOS
-    - Poner
-    - Sacar
-    - Mover
-    - IrAlBorde
-    - Alternativas
-    - RepeticionSimple
-    - EXPRESIONES
-    - Numero
-    - Color
-    - Direccion
-    - ExpresionesPrimitivas
-    - FuncionesPrimitivas
-    - OperadorNumerico
-    - OperadorDeComparacion
-    - OperadorDeNegacion
-    - DEFINICIONES
-    - DefinicionDeFuncionSimpleDeclarativa
-  disabled:
-    - IrAlBorde
-    - AlternativaSimple
-    - RepeticionSimple
-    - Numero
-    - puedeMover
-    - nroBolitas
-    - OperadorNumerico
-    - OperadorDeComparacion
-    - OperadorDeNegacion
+  disabled: [ "IrAlBorde"
+            , "RepeticionSimple"
+            , "AlternativaSimple"
+            , "Numero"
+            , "nroBolitas", "puedeMover"
+            , "OperadorNumerico", "OperadorDeComparacion"
+            , "OperadorDeNegacion"
+            , "siguiente", "previo", "opuesto"
+            ]
+  visible:  [ "COMANDOS"    , "Poner", "Mover", "Sacar", "IrAlBorde"
+                            , "Procedimientos primitivos"
+                            , "Mis procedimientos"
+                            , "RepeticionSimple"
+                            , "AlternativaCompleta", "AlternativaSimple"
+            , "EXPRESIONES" , "Color", "Direccion", "Numero"
+                            , "nroBolitas", "hayBolitas", "puedeMover"
+                            , "FuncionesPrimitivas"
+                            , "Mis funciones"
+                            , "OperadorNumerico", "OperadorDeComparacion"
+                            , "OperadorDeNegacion"
+                            , "siguiente", "previo", "opuesto"
+            , "DEFINICIONES", "procedures_defnoreturn"
+                            , "DefinicionDeFuncionSimpleDeclarativa"
+            ]
   defaultToolbox: |
     <category name="COMANDOS">
     </category>
@@ -61,7 +56,6 @@ blocks:
         <block type="Mover"></block>
         <block type="IrAlBorde"></block>
         <block type="VaciarTablero"></block>
-        <block type="BOOM"></block>
       </category>
       <category name="Procedimientos primitivos">
       </category>

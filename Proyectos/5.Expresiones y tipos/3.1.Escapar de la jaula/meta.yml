@@ -23,32 +23,6 @@ attire:
   active: Escapar de la jaula
 initialDescription: true
 blocks:
-  visible:
-    - COMANDOS
-    - Poner
-    - Sacar
-    - Mover
-    - IrAlBorde
-    - RepeticionSimple
-    - EXPRESIONES
-    - Numero
-    - Color
-    - Direccion
-    - nroBolitas
-    - FuncionesPrimitivas
-    - OperadorNumerico
-    - DEFINICIONES
-  disabled:
-    - Poner
-    - Sacar
-    - Mover
-    - IrAlBorde
-    - RepeticionSimple
-    - Numero
-    - Color
-    - Direccion
-    - nroBolitas
-    - OperadorNumerico
   defaultToolbox: |
     <category name="COMANDOS">
     </category>
@@ -126,6 +100,21 @@ blocks:
       <block type="ExpresionCompletar"></block>
       <block type="AsociacionDeTeclaCompletar"></block>
     </category>
+  disabled: [ "Poner", "Mover", "Sacar", "IrAlBorde"
+            , "RepeticionSimple"
+            , "Color", "Direccion", "Numero"
+            , "nroBolitas", "OperadorNumerico"
+            ]
+  visible:  [ "COMANDOS"    , "Poner", "Mover", "Sacar", "IrAlBorde"
+                            , "Procedimientos primitivos"
+                            , "Mis procedimientos"
+                            , "RepeticionSimple"
+            , "EXPRESIONES" , "Color", "Direccion", "Numero"
+                            , "nroBolitas"
+                            , "FuncionesPrimitivas"
+                            , "OperadorNumerico"
+            , "DEFINICIONES", "procedures_defnoreturn"
+            ]
 customErrors: null
 name: Escapar de la jaula
 activity:

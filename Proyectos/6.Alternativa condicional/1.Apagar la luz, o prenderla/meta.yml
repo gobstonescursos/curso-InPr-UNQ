@@ -23,31 +23,24 @@ attire:
   active: 'Apagar la luz, o prenderla'
 initialDescription: true
 blocks:
-  visible:
-    - COMANDOS
-    - Poner
-    - Sacar
-    - Mover
-    - IrAlBorde
-    - AlternativaCompleta
-    - RepeticionSimple
-    - EXPRESIONES
-    - Numero
-    - Color
-    - Direccion
-    - hayBolitas
-    - nroBolitas
-    - FuncionesPrimitivas
-    - OperadorNumerico
-    - DEFINICIONES
-  disabled:
-    - Mover
-    - IrAlBorde
-    - RepeticionSimple
-    - Numero
-    - Direccion
-    - nroBolitas
-    - OperadorNumerico
+  disabled: [ "Mover", "IrAlBorde"
+            , "RepeticionSimple"
+            , "Direccion", "Numero"
+            , "nroBolitas", "OperadorNumerico"
+            , "siguiente", "previo", "opuesto"
+            ]
+  visible:  [ "COMANDOS"    , "Poner", "Mover", "Sacar", "IrAlBorde"
+                            , "Procedimientos primitivos"
+                            , "Mis procedimientos"
+                            , "RepeticionSimple"
+                            , "AlternativaCompleta"
+            , "EXPRESIONES" , "Color", "Direccion", "Numero"
+                            , "nroBolitas", "hayBolitas"
+                            , "FuncionesPrimitivas"
+                            , "OperadorNumerico"
+                            , "siguiente", "previo", "opuesto"
+            , "DEFINICIONES", "procedures_defnoreturn"
+            ]
   defaultToolbox: |
     <category name="COMANDOS">
     </category>
@@ -57,7 +50,6 @@ blocks:
         <block type="Mover"></block>
         <block type="IrAlBorde"></block>
         <block type="VaciarTablero"></block>
-        <block type="BOOM"></block>
       </category>
       <category name="Procedimientos primitivos">
       </category>

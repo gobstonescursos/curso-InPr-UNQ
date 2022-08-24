@@ -25,23 +25,6 @@ attire:
   active: Fútbol de robots
 initialDescription: true
 blocks:
-  visible:
-    - COMANDOS
-    - Poner
-    - Sacar
-    - Mover
-    - IrAlBorde
-    - RepeticionSimple
-    - EXPRESIONES
-    - Numero
-    - Color
-    - Direccion
-    - DEFINICIONES
-  disabled:
-    - Poner
-    - Sacar
-    - IrAlBorde
-    - Color
   defaultToolbox: |
     <category name="COMANDOS">
     </category>
@@ -119,6 +102,17 @@ blocks:
       <block type="ExpresionCompletar"></block>
       <block type="AsociacionDeTeclaCompletar"></block>
     </category>
+  disabled: [ "Poner", "Sacar", "IrAlBorde"
+            , "Color"
+            ]
+  visible: [ "COMANDOS"    , "Poner", "Mover", "Sacar", "IrAlBorde"
+                           , "Procedimientos primitivos"
+                           , "Mis procedimientos"
+						   , "RepeticionSimple"
+           , "EXPRESIONES" , "Color", "Direccion", "Numero"
+           , "DEFINICIONES", "procedures_defnoreturnnoparams"
+                           , "procedures_defnoreturn"
+           ]
 customErrors: null
 name: Entrenamiento para fútbol de robots
 activity:

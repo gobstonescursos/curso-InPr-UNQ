@@ -85,9 +85,9 @@ blocks:
         <block type="ExpresionCompletar"></block>
         <block type="AsociacionDeTeclaCompletar"></block>
       </category>
-  disabled: [ 
+  disabled: [
             ]
-  visible:  [ "COMANDOS"    , "Poner", "Mover", "Sacar", "IrAlBorde", "BOOM"
+  visible:  [ "COMANDOS"    , "Poner", "Mover", "Sacar", "IrAlBorde"
                             , "Procedimientos primitivos", "Mis procedimientos"
                             , "RepeticionSimple", "RepeticionCondicional"
                             , "AlternativaCompleta", "AlternativaSimple"
@@ -100,7 +100,7 @@ blocks:
                             , "siguiente", "previo", "opuesto"
             , "DEFINICIONES", "procedures_defnoreturn"
                             , "DefinicionDeFuncionSimpleConParametrosDeclarativa"
-                            , "DefinicionDeFuncionDeclarativa"           
+                            , "DefinicionDeFuncionDeclarativa"
             ]
 board:
   active: 1
@@ -118,4 +118,3 @@ library:
 source:
   visible: true
   percentage: 0.80
-  

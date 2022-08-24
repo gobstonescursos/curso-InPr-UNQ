@@ -23,27 +23,21 @@ attire:
   active: Cajones y llaves
 initialDescription: true
 blocks:
-  visible:
-    - COMANDOS
-    - Poner
-    - Sacar
-    - Mover
-    - IrAlBorde
-    - Alternativas
-    - Repeticiones
-    - EXPRESIONES
-    - Numero
-    - Color
-    - Direccion
-    - ExpresionesPrimitivas
-    - FuncionesPrimitivas
-    - OperadorNumerico
-    - OperadorDeComparacion
-    - OperadorLogico
-    - OperadorDeNegacion
-    - DEFINICIONES
-    - DefinicionDeFuncionSimpleConParametrosDeclarativa
-  disabled: []
+  disabled: [
+            ]
+  visible:  [ "COMANDOS"    , "Poner", "Mover", "Sacar", "IrAlBorde"
+                            , "Procedimientos primitivos", "Mis procedimientos"
+                            , "RepeticionSimple", "RepeticionCondicional"
+                            , "AlternativaCompleta", "AlternativaSimple"
+            , "EXPRESIONES" , "Color", "Direccion", "Numero"
+                            , "nroBolitas", "hayBolitas", "puedeMover"
+                            , "FuncionesPrimitivas", "Mis funciones"
+                            , "OperadorNumerico", "OperadorDeComparacion"
+                            , "OperadorDeNegacion", "OperadorLogico"
+                            , "siguiente", "previo", "opuesto"
+            , "DEFINICIONES", "procedures_defnoreturn"
+                            , "DefinicionDeFuncionSimpleConParametrosDeclarativa"
+            ]
   defaultToolbox: |
     <category name="COMANDOS">
     </category>

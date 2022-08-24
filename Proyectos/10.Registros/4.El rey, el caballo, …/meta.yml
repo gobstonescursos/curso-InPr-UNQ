@@ -93,7 +93,7 @@ blocks:
         <block type="ExpresionCompletar"></block>
         <block type="AsociacionDeTeclaCompletar"></block>
       </category>
-  disabled: [ "COMANDOS"    , "Poner", "Mover", "Sacar", "IrAlBorde", "BOOM"
+  disabled: [ "COMANDOS"    , "Poner", "Mover", "Sacar", "IrAlBorde"
                             , "RepeticionCondicional"
                             , "AlternativaCompleta", "AlternativaSimple"
                             , "Asignación"
@@ -104,7 +104,7 @@ blocks:
                             , "paloDeCartaEspañolaDe40_"
                             , "dameCarta__"
                             ]
-  visible:  [ "COMANDOS"    , "Poner", "Mover", "Sacar", "IrAlBorde", "BOOM"
+  visible:  [ "COMANDOS"    , "Poner", "Mover", "Sacar", "IrAlBorde"
                             , "Procedimientos primitivos", "Mis procedimientos"
                             , "RepeticionSimple", "RepeticionCondicional"
                             , "AlternativaCompleta", "AlternativaSimple"

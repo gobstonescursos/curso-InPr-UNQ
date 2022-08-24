@@ -23,25 +23,18 @@ attire:
   active: null
 initialDescription: true
 blocks:
-  visible:
-    - COMANDOS
-    - Poner
-    - Sacar
-    - Mover
-    - IrAlBorde
-    - RepeticionSimple
-    - EXPRESIONES
-    - Numero
-    - Color
-    - Direccion
-    - nroBolitas
-    - OperadorNumerico
-    - DEFINICIONES
-  disabled:
-    - Sacar
-    - Mover
-    - IrAlBorde
-    - Direccion
+  disabled: [ "Mover", "Sacar", "IrAlBorde"
+            , "Direccion"
+            ]
+  visible:  [ "COMANDOS"    , "Poner", "Mover", "Sacar", "IrAlBorde"
+                            , "Procedimientos primitivos"
+                            , "Mis procedimientos"
+                            , "RepeticionSimple"
+            , "EXPRESIONES" , "Color", "Direccion", "Numero"
+                            , "nroBolitas"
+                            , "OperadorNumerico"
+            , "DEFINICIONES", "procedures_defnoreturn"
+            ]
   defaultToolbox: |
     <category name="COMANDOS">
     </category>

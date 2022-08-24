@@ -25,41 +25,29 @@ attire:
   active: Una cena
 initialDescription: true
 blocks:
-  visible:
-    - COMANDOS
-    - Poner
-    - Sacar
-    - Mover
-    - IrAlBorde
-    - Alternativas
-    - RepeticionSimple
-    - EXPRESIONES
-    - Numero
-    - Color
-    - Direccion
-    - ExpresionesPrimitivas
-    - FuncionesPrimitivas
-    - OperadorNumerico
-    - OperadorDeComparacion
-    - OperadorLogico
-    - OperadorDeNegacion
-    - DEFINICIONES
-    - DefinicionDeFuncionSimpleDeclarativa
-  disabled:
-    - Poner
-    - Sacar
-    - Mover
-    - IrAlBorde
-    - AlternativaSimple
-    - RepeticionSimple
-    - Numero
-    - Color
-    - Direccion
-    - hayBolitas
-    - puedeMover
-    - nroBolitas
-    - OperadorNumerico
-    - OperadorDeComparacion
+  disabled: [ "Poner", "Mover", "Sacar", "IrAlBorde"
+            , "RepeticionSimple"
+            , "AlternativaSimple"
+            , "Color", "Direccion", "Numero"
+            , "nroBolitas", "hayBolitas", "puedeMover"
+            , "OperadorNumerico", "OperadorDeComparacion"
+            , "siguiente", "previo", "opuesto"
+            ]
+  visible:  [ "COMANDOS"    , "Poner", "Mover", "Sacar", "IrAlBorde"
+                            , "Procedimientos primitivos"
+                            , "Mis procedimientos"
+                            , "RepeticionSimple"
+                            , "AlternativaCompleta", "AlternativaSimple"
+            , "EXPRESIONES" , "Color", "Direccion", "Numero"
+                            , "nroBolitas", "hayBolitas", "puedeMover"
+                            , "FuncionesPrimitivas"
+                            , "Mis funciones"
+                            , "OperadorNumerico", "OperadorDeComparacion"
+                            , "OperadorDeNegacion", "OperadorLogico"
+                            , "siguiente", "previo", "opuesto"
+            , "DEFINICIONES", "procedures_defnoreturn"
+                            , "DefinicionDeFuncionSimpleDeclarativa"
+            ]
   defaultToolbox: |
     <category name="COMANDOS">
     </category>
@@ -69,7 +57,6 @@ blocks:
         <block type="Mover"></block>
         <block type="IrAlBorde"></block>
         <block type="VaciarTablero"></block>
-        <block type="BOOM"></block>
       </category>
       <category name="Procedimientos primitivos">
       </category>

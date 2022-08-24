@@ -85,7 +85,7 @@ blocks:
         <block type="ExpresionCompletar"></block>
         <block type="AsociacionDeTeclaCompletar"></block>
       </category>
-  disabled: [ "Poner", "Sacar", "IrAlBorde", "BOOM"
+  disabled: [ "Poner", "Sacar", "IrAlBorde"
             , "RepeticionSimple", "RepeticionCondicional"
             , "AlternativaSimple", "AlternativaCompleta"
             , "Numero"
@@ -95,7 +95,7 @@ blocks:
             , "siguiente", "previo", "opuesto"
             , "DefinicionDeFuncionSimpleConParametrosDeclarativa"
             ]
-  visible:  [ "COMANDOS"    , "Poner", "Mover", "Sacar", "IrAlBorde", "BOOM"
+  visible:  [ "COMANDOS"    , "Poner", "Mover", "Sacar", "IrAlBorde"
                             , "Procedimientos primitivos", "Mis procedimientos"
                             , "RepeticionSimple", "RepeticionCondicional"
                             , "AlternativaCompleta", "AlternativaSimple"

@@ -23,34 +23,24 @@ attire:
   active: null
 initialDescription: true
 blocks:
-  visible:
-    - COMANDOS
-    - Poner
-    - Sacar
-    - Mover
-    - IrAlBorde
-    - AlternativaCompleta
-    - RepeticionSimple
-    - EXPRESIONES
-    - Numero
-    - Color
-    - Direccion
-    - ExpresionesPrimitivas
-    - FuncionesPrimitivas
-    - OperadorNumerico
-    - OperadorDeComparacion
-    - DEFINICIONES
-  disabled:
-    - Poner
-    - Sacar
-    - Mover
-    - IrAlBorde
-    - RepeticionSimple
-    - Numero
-    - Direccion
-    - hayBolitas
-    - puedeMover
-    - OperadorNumerico
+  disabled: [ "Poner", "Mover", "Sacar", "IrAlBorde"
+            , "RepeticionSimple"
+            , "Direccion", "Numero"
+            , "hayBolitas", "puedeMover", "OperadorNumerico"
+            , "siguiente", "previo", "opuesto"
+            ]
+  visible:  [ "COMANDOS"    , "Poner", "Mover", "Sacar", "IrAlBorde"
+                            , "Procedimientos primitivos"
+                            , "Mis procedimientos"
+                            , "RepeticionSimple"
+                            , "AlternativaCompleta"
+            , "EXPRESIONES" , "Color", "Direccion", "Numero"
+                            , "nroBolitas", "hayBolitas", "puedeMover"
+                            , "FuncionesPrimitivas"
+                            , "OperadorNumerico", "OperadorDeComparacion"
+                            , "siguiente", "previo", "opuesto"
+            , "DEFINICIONES", "procedures_defnoreturn"
+            ]
   defaultToolbox: |
     <category name="COMANDOS">
     </category>
@@ -60,7 +50,6 @@ blocks:
         <block type="Mover"></block>
         <block type="IrAlBorde"></block>
         <block type="VaciarTablero"></block>
-        <block type="BOOM"></block>
       </category>
       <category name="Procedimientos primitivos">
       </category>

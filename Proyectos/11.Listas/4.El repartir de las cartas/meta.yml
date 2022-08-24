@@ -90,7 +90,7 @@ blocks:
         <block type="ExpresionCompletar"></block>
         <block type="AsociacionDeTeclaCompletar"></block>
       </category>
-  disabled: [ "COMANDOS"    , "Poner", "Mover", "Sacar", "IrAlBorde", "BOOM"
+  disabled: [ "COMANDOS"    , "Poner", "Mover", "Sacar", "IrAlBorde"
                             , "RepeticionSimple"
                             , "AlternativaCompleta", "AlternativaSimple"
             , "EXPRESIONES" , "Color", "Direccion", "Numero"
@@ -99,7 +99,7 @@ blocks:
                             , "OperadorLogico"
                             , "siguiente", "previo", "opuesto"
             ]
-  visible:  [ "COMANDOS"    , "Poner", "Mover", "Sacar", "IrAlBorde", "BOOM"
+  visible:  [ "COMANDOS"    , "Poner", "Mover", "Sacar", "IrAlBorde"
                             , "Procedimientos primitivos", "Mis procedimientos"
                             , "RepeticionSimple", "RepeticionCondicional"
                             , "AlternativaCompleta", "AlternativaSimple"

@@ -23,30 +23,22 @@ attire:
   active: Laberinto
 initialDescription: true
 blocks:
-  visible:
-    - COMANDOS
-    - Poner
-    - Sacar
-    - Mover
-    - IrAlBorde
-    - RepeticionSimple
-    - EXPRESIONES
-    - Numero
-    - Color
-    - Direccion
-    - nroBolitas
-    - FuncionesPrimitivas
-    - OperadorNumerico
-    - DEFINICIONES
-  disabled:
-    - Poner
-    - Sacar
-    - Mover
-    - IrAlBorde
-    - Color
-    - Direccion
-    - nroBolitas
-    - OperadorNumerico
+  disabled: [ "Poner", "Mover", "Sacar", "IrAlBorde"
+            , "Color", "Direccion"
+            , "nroBolitas", "OperadorNumerico"
+            , "siguiente", "previo", "opuesto"
+            ]
+  visible:  [ "COMANDOS"    , "Poner", "Mover", "Sacar", "IrAlBorde"
+                            , "Procedimientos primitivos"
+                            , "Mis procedimientos"
+                            , "RepeticionSimple"
+            , "EXPRESIONES" , "Color", "Direccion", "Numero"
+                            , "nroBolitas"
+                            , "FuncionesPrimitivas"
+                            , "OperadorNumerico"
+                            , "siguiente", "previo", "opuesto"
+            , "DEFINICIONES", "procedures_defnoreturn"
+            ]
   defaultToolbox: |
     <category name="COMANDOS">
     </category>

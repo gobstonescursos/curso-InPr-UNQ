@@ -23,44 +23,30 @@ attire:
   active: Super Lucho
 initialDescription: true
 blocks:
-  visible:
-    - COMANDOS
-    - Poner
-    - Sacar
-    - Mover
-    - IrAlBorde
-    - Alternativas
-    - Repeticiones
-    - EXPRESIONES
-    - Numero
-    - Color
-    - Direccion
-    - ExpresionesPrimitivas
-    - FuncionesPrimitivas
-    - OperadorNumerico
-    - OperadorDeComparacion
-    - OperadorLogico
-    - OperadorDeNegacion
-    - DEFINICIONES
-    - DefinicionDeFuncionSimpleConParametrosDeclarativa
-  disabled:
-    - Poner
-    - Sacar
-    - Mover
-    - IrAlBorde
-    - AlternativaSimple
-    - AlternativaCompleta
-    - RepeticionSimple
-    - Numero
-    - Color
-    - Direccion
-    - hayBolitas
-    - puedeMover
-    - nroBolitas
-    - OperadorNumerico
-    - OperadorDeComparacion
-    - OperadorLogico
-    - OperadorDeNegacion
+  disabled: [ "Poner", "Mover", "Sacar", "IrAlBorde"
+            , "RepeticionSimple"
+            , "AlternativaSimple", "AlternativaCompleta"
+            , "Color", "Direccion", "Numero"
+            , "nroBolitas", "hayBolitas", "puedeMover"
+            , "Mis funciones"
+            , "OperadorNumerico", "OperadorDeComparacion"
+            , "OperadorDeNegacion", "OperadorLogico"
+            , "siguiente", "previo", "opuesto"
+            , "procedures_defreturnsimplewithparams"
+            ]
+  visible:  [ "COMANDOS"    , "Poner", "Mover", "Sacar", "IrAlBorde"
+                            , "Procedimientos primitivos", "Mis procedimientos"
+                            , "RepeticionSimple", "RepeticionCondicional"
+                            , "AlternativaCompleta", "AlternativaSimple"
+            , "EXPRESIONES" , "Color", "Direccion", "Numero"
+                            , "nroBolitas", "hayBolitas", "puedeMover"
+                            , "FuncionesPrimitivas", "Mis funciones"
+                            , "OperadorNumerico", "OperadorDeComparacion"
+                            , "OperadorDeNegacion", "OperadorLogico"
+                            , "siguiente", "previo", "opuesto"
+            , "DEFINICIONES", "procedures_defnoreturn"
+                            , "DefinicionDeFuncionSimpleConParametrosDeclarativa"
+            ]
   defaultToolbox: |
     <category name="COMANDOS">
     </category>
@@ -70,7 +56,6 @@ blocks:
         <block type="Mover"></block>
         <block type="IrAlBorde"></block>
         <block type="VaciarTablero"></block>
-        <block type="BOOM"></block>
       </category>
       <category name="Procedimientos primitivos">
       </category>

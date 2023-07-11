@@ -1,5 +1,5 @@
 # 6.2. Puede fallar
-No siempre nuestros programas funcionan como esperamos. Ejecutá el siguiente programa y fijate que ocurre.
+No siempre nuestros programas funcionan como esperamos. Ejecutá el siguiente programa y fijate qué ocurre.
 
 > **Para pensar**
 >

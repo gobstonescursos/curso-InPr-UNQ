@@ -9,15 +9,15 @@ Completá el programa para que cumpla el propósito de eliminar las bolitas negr
 de todas las celdas, para que la imagen vuelva a ser una imagen correctamente 
 codificada.
 
-La estrategia de solución, que ya está empezada en el procedimiento `LimpiarLaImagen`,
+La estrategia de solución, que ya está empezada en el procedimiento `Limpiar la imagen`,
 es la de hacer un recorrido sobre las celdas del tablero. 
 Tu trabajo consiste en completar ese recorrido, y también completar los procedimientos 
 y funciones que representan las subtareas para las partes del mismo: 
-  * el procedimiento `ComenzarElRecorrido` para posicionarse al principio de la imagen 
+  * el procedimiento `Comenzar el recorrido` para posicionarse al principio de la imagen 
      y no olvidarte ninguna celda, 
-  * la función `esLaÚltimaCelda` para indicar el fin del recorrido,
-  * el procedimiento `EliminarCenizaDeLaCeldaActual` para procesar cada celda, y
-  * el procedimiento `PasarALaSiguienteCelda` que ya te lo damos hecho. 
+  * la función `es la última celda` para indicar el fin del recorrido,
+  * el procedimiento `Eliminar ceniza de la celda actual` para procesar cada celda, y
+  * el procedimiento `Pasar a la siguiente celda` que ya te lo damos hecho. 
   
 Te mostramos un tablero inicial posible, y su correspondiente tablero final.
 <center>

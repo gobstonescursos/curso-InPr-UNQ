@@ -85,13 +85,13 @@ blocks:
         <block type="ExpresionCompletar"></block>
         <block type="AsociacionDeTeclaCompletar"></block>
       </category>
-  disabled: [ "IrAlBorde", "BOOM"
+  disabled: [ "IrAlBorde"
             , "RepeticionSimple"
             , "AlternativaCompleta"
             , "hayBolitas", "puedeMover"
             , "siguiente", "previo", "opuesto"
             ]
-  visible:  [ "COMANDOS"    , "Poner", "Mover", "Sacar", "IrAlBorde", "BOOM"
+  visible:  [ "COMANDOS"    , "Poner", "Mover", "Sacar", "IrAlBorde"
                             , "Procedimientos primitivos", "Mis procedimientos"
                             , "RepeticionSimple", "RepeticionCondicional"
                             , "AlternativaCompleta", "AlternativaSimple"

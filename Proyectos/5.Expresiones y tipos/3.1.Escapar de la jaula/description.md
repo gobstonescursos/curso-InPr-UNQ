@@ -1,7 +1,7 @@
 #Proyecto 3.1. Escapar de la jaula
 
 Un ratón está atrapado en una jaula y necesita ayuda para encontrar la salida. 
-Tenés que construir un procedimiento `AyudarAlRatonASalir` que ayude al ratón a lograrlo. 
+Tenés que construir un procedimiento `Ayudar al ratón a salir` que ayude al ratón a lograrlo. 
 Hay un procedimiento primitivo para mover al ratón, pero la dirección que tenés que darle 
 como argumento depende de cada jaula: fijate que en el piso están marcadas flechas que le 
 indican al ratón la dirección que debe tomar. 

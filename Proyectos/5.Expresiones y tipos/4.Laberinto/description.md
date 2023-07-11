@@ -3,7 +3,7 @@
 ¿Te acordás del ratón que escapó de la jaula? 
 Resulta que a la salida lo estaban esperando para ponerlo en un laberinto y ver si podía escaparse de él. 
 Por suerte, en el laberinto también hay flechas que marcan el camino y sabe que tiene que dar 20 pasos para salir. 
-Construí y probá el procedimiento `SalirDelLaberinto` que le indique al ratón lo que debe hacer para salir. 
+Construí y probá el procedimiento `Salir del laberinto` que le indique al ratón lo que debe hacer para salir. 
 Te mostramos algunos laberintos, y cómo tiene que quedar al terminar:
            
 <center>
@@ -22,7 +22,7 @@ Revisá los procedimientos y funciones primitivos para ver cómo hacer.
 
 > **Consejo**
 >
-> Podés definir un procedimiento `AvanzarUnPasoSiguiendoLaFlecha` para hacer uno de los movimientos. 
+> Podés definir un procedimiento `Avanzar un paso siguiendo la flecha` para hacer uno de los movimientos. 
 > Para hacerlo podés mirar cómo hiciste en _“Escapar de la jaula”_, porque la idea es parecida…
 
 [Enunciado en PDF][PDF]

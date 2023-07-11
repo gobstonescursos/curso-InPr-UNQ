@@ -14,7 +14,6 @@ blocks:
           <block type="Mover"></block>
           <block type="IrAlBorde"></block>
           <block type="VaciarTablero"></block>
-          <block type="BOOM"></block>
         </category>
         <category name="Procedimientos primitivos">
         </category>
@@ -113,4 +112,4 @@ library:
   visible: false
 source:
   visible: true
-  percentage: 0.75  
+  percentage: 0.75

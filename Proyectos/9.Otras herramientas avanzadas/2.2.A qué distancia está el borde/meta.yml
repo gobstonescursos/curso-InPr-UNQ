@@ -85,7 +85,7 @@ blocks:
         <block type="ExpresionCompletar"></block>
         <block type="AsociacionDeTeclaCompletar"></block>
       </category>
-  disabled: [ "Poner", "Sacar", "IrAlBorde", "BOOM"
+  disabled: [ "Poner", "Sacar", "IrAlBorde"
             , "RepeticionSimple"
             , "AlternativaCompleta"
             , "nroBolitas", "hayBolitas"
@@ -93,7 +93,7 @@ blocks:
             , "OperadorLogico"
             , "siguiente", "previo", "opuesto"
             ]
-  visible:  [ "COMANDOS"    , "Poner", "Mover", "Sacar", "IrAlBorde", "BOOM"
+  visible:  [ "COMANDOS"    , "Poner", "Mover", "Sacar", "IrAlBorde"
                             , "Procedimientos primitivos", "Mis procedimientos"
                             , "RepeticionSimple", "RepeticionCondicional"
                             , "AlternativaCompleta", "AlternativaSimple"
@@ -124,4 +124,3 @@ library:
 source:
   visible: true
   percentage: 0.80
-  

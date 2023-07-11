@@ -11,7 +11,7 @@ representa con 3 bolitas negras.
 En el tablero puede haber también bolitas negras que no pertenecen al camino, y 
 que no serán tenidas en cuenta en la solución.
 
-En el proyecto se provee también un procedimiento primitivo `AvanzarCarreta` que 
+En el proyecto se provee también un procedimiento primitivo `Avanzar carreta` que 
 se encarga de avanzar la carreta; completá el programa para que avance la carreta hasta 
 la casa de la bruja sin olvidar ir dejando miguitas en el camino. 
 Un posible tablero inicial y su correspondiente tablero final, con y sin vestimenta, 
@@ -23,7 +23,7 @@ se observan en las imágenes:
 
 ¡Acordate de empezar pensando una estrategia de solución, y viendo qué subtareas son 
 necesarias para expresarla! 
-Al finalizar, el docente va a proponer un análisis de las soluciones propuestas, así que 
+Al finalizar, le docente va a proponer un análisis de las soluciones propuestas, así que 
 pensá bien las partes de tu programa, y cómo se arman para proveer la solución final.
 
 [Enunciado en PDF][PDF]

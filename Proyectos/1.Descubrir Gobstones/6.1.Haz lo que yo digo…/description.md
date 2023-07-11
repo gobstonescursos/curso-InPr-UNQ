@@ -1,7 +1,7 @@
 # 6.1. Haz lo que yo digo…
 En muchas ocasiones puede ser súmamente útil agregar comentarios a tu programa que 
 permitan saber a los demás (y a vos mismo, por si te olvidas luego) 
-qué es lo que hace tu programa, y en que condiciones esperas que funcione correctamente.
+qué es lo que hace tu programa, y en qué condiciones esperás que funcione correctamente.
 
 Un comentario puede agregarse dando click con el botón derecho sobre cualquier bloque, 
 y seleccionando "agregar comentario". 

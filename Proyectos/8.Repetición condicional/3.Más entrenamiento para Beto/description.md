@@ -1,7 +1,7 @@
 #Proyecto 3. Más entrenamiento para Beto
 
 El entrenador del Beto sigue con interés en que el robot entrene para poder jugar 
-en el partido, a pesar de que nosotros sabemos que no es necesario. 
+en el partido, a pesar de que nosotres sabemos que no es necesario. 
 Entonces, otra vez más tenemos que ayudar al Beto a entrenar, completando el 
 programa que viene en este proyecto. 
 En esta ocasión tenemos siempre 5 pelotas, pero no sabemos a qué distancia está 

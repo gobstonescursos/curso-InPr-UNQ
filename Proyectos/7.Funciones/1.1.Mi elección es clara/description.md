@@ -1,6 +1,6 @@
 #Proyecto 1.1. La luz está prendida vs. hay bolitas: mi elección es clara
 
-Compará los procedimientos que vienen hechos: `SimularInterruptorDeLuz` y `MantenerSeccionDelCantero`. 
+Compará los procedimientos que vienen hechos: `Simular interruptor de luz` y `Mantener sección del cantero`. 
 Después de que encuentres en qué se diferencian, tenemos un desafío. 
 Podés ver los dos procedimientos en la siguiente imagen:
 
@@ -11,7 +11,7 @@ Podés ver los dos procedimientos en la siguiente imagen:
 Los dos procedimientos están hechos a partir de una alternativa condicional, y en los dos se usan procedimientos 
 con buenos nombres. 
 Pero, ¿qué pasa con la condición? 
-El desafío: conseguí que `SimularInterruptorDeLuz` sea tan fácil de leer y entender como `MantenerSeccionDelCantero`. 
+El desafío: conseguí que `Simular interruptor de luz` sea tan fácil de leer y entender como `Mantener sección del cantero`. 
 Para lograrlo, vas a tener que utilizar una herramienta nueva. 
 Ya sabés dónde buscar, ¿no?
 
